@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Music, Play, Video, Instagram, Twitter, Calendar, ShoppingBag, User, X } from 'lucide-react'
+import { Music, Play, Video, Instagram, Twitter, User } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 
@@ -163,7 +163,7 @@ export default function ArtistLinkTree() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.5 }}
           >
-            "The Begininng"
+            &quot;The Begininng&quot;
           </motion.p>
         </header>
 
@@ -221,7 +221,7 @@ export default function ArtistLinkTree() {
               className="w-full h-full"
             ></iframe>
           </div>
-          <p className="text-lg text-gray-300">"A Different Kind of Love" - New Single Out Now</p>
+          <p className="text-lg text-gray-300">&quot;A Different Kind of Love&quot; - New Single Out Now</p>
         </motion.section>
 
         <motion.div
@@ -319,7 +319,7 @@ export default function ArtistLinkTree() {
         <DialogContent className="bg-gray-900 text-gray-300 border border-indigo-500">
           <DialogHeader>
             <DialogTitle className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">About the Artist</DialogTitle>
-            <DialogDescription className="text-gray-400">Learn more about Artist Name's journey in music</DialogDescription>
+            <DialogDescription className="text-gray-400">Learn more about Artist Name&apos;s journey in music</DialogDescription>
           </DialogHeader>
           <motion.div 
             className="mt-4"
