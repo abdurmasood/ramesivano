@@ -319,7 +319,7 @@ export default function ArtistLinkTree() {
         <DialogContent className="bg-gray-900 text-gray-300 border border-indigo-500">
           <DialogHeader>
             <DialogTitle className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">About the Artist</DialogTitle>
-            <DialogDescription className="text-gray-400">Learn more about Artist Name&apos;s journey in music</DialogDescription>
+            <DialogDescription className="text-gray-400">Learn more about Ramé&apos;s journey in music</DialogDescription>
           </DialogHeader>
           <motion.div 
             className="mt-4"
@@ -328,14 +328,12 @@ export default function ArtistLinkTree() {
             transition={{ duration: 0.3 }}
           >
             <p className="mb-4">
-              Artist Name is a melancholic artist crafting soulful melodies that resonate with the depths of human emotion. Their journey in music began in the quiet corners of their hometown, where they first picked up a guitar and started penning lyrics that would later touch hearts across the globe.
+            Hailing from the capital of Pakistan, Ramé began his journey into the arts at the age of 10. He spent his early years solidifying a firm footing in the independent music scene in Pakistan by touring across the country as a cover artist. Approach 2016, Ramé took a break from touring and moved to the United Kingdom, focusing more on his lyrical expression. 
             </p>
             <p className="mb-4">
-              Influenced by the raw emotions of grunge and the introspective nature of indie folk, Artist Name has cultivated a unique sound that bridges the gap between vulnerability and strength. Their music serves as a mirror to the soul, reflecting the complex tapestry of human experiences.
-            </p>
+            Ramé frequently cites his inspirations as Atif Aslam, Arijit Singh and Xulfi (from Call The Band) growing up. After travelling halfway across the globe, he spent a significant period of time crafting his own voice, studying artists like Post Malone, The Weeknd, Joji, Ed Sheeran, Michael Jackson and merging their collective sound with his roots.            </p>
             <p>
-              With several critically acclaimed albums and a growing global fanbase, Artist Name continues to push the boundaries of their art, always seeking new ways to connect with listeners through their haunting melodies and introspective lyrics.
-            </p>
+            Today Ramé taps deeper in himself to connect with his audience. His artistic vision is boundless, constantly challenging himself musically and lyrically to explore his limits. Ramé’s discography is a testament to his commitment to growth as an artist. He believes in being true to his vision and due to his raw expression, others are finding it easy to believe in him too.            </p>
           </motion.div>
           <Button onClick={() => setIsAboutOpen(false)} className="mt-4 bg-indigo-500 hover:bg-indigo-600 text-white">
             Close
