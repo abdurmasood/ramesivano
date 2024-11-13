@@ -43,7 +43,7 @@ export default function ArtistLinkTree() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-gray-300 flex flex-col items-center justify-center p-4 overflow-hidden relative">
+    <div className="min-h-screen bg-[#0a0a0a] text-gray-300 flex flex-col items-center justify-center p-4 sm:p-6 overflow-hidden relative">
       {/* Animated background */}
       <div className="absolute inset-0 overflow-hidden backdrop-blur-[100px]">
         {[...Array(20)].map((_, i) => (
@@ -79,12 +79,12 @@ export default function ArtistLinkTree() {
         transition={{ duration: 1 }}
         className="w-full max-w-md relative z-10"
       >
-        <header className="text-center mb-12">
+        <header className="text-center mb-8 sm:mb-12">
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="relative w-40 h-40 mx-auto mb-6"
+            className="relative w-32 h-32 sm:w-40 sm:h-40 mx-auto mb-4 sm:mb-6"
           >
             <div className="relative w-full h-full">
               {/* White circle background with smoother gradient edge */}
@@ -150,7 +150,7 @@ export default function ArtistLinkTree() {
           </motion.div>
           
           <motion.h1 
-            className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-500 mb-2"
+            className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-500 mb-2"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.5 }}
@@ -158,16 +158,16 @@ export default function ArtistLinkTree() {
             Ramé Sivano
           </motion.h1>
           <motion.p 
-            className="text-xl text-gray-400"
+            className="text-lg sm:text-xl text-gray-400"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.5 }}
           >
-            &quot;The Begininng&quot;
+            "The Begininng"
           </motion.p>
         </header>
 
-        <nav className="space-y-4 mb-12">
+        <nav className="space-y-3 sm:space-y-4 mb-8 sm:mb-12">
           {[
             { 
               icon: Play, 
@@ -207,12 +207,12 @@ export default function ArtistLinkTree() {
         </nav>
 
         <motion.section 
-          className="mb-12 bg-gray-900 bg-opacity-50 p-6 rounded-xl shadow-2xl backdrop-blur-sm border border-gray-800"
+          className="mb-8 sm:mb-12 bg-gray-900 bg-opacity-50 p-4 sm:p-6 rounded-xl shadow-2xl backdrop-blur-sm border border-gray-800"
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.8, duration: 0.5 }}
         >
-          <h2 className="text-2xl font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-500">Latest Release</h2>
+          <h2 className="text-xl sm:text-2xl font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-500">Latest Release</h2>
           <div className="aspect-w-16 aspect-h-9 mb-4 rounded-lg overflow-hidden shadow-lg">
             <iframe
               src="https://www.youtube.com/embed/50WmEK3oS6g"
@@ -291,7 +291,7 @@ export default function ArtistLinkTree() {
           ))}
         </motion.div>
 
-        <footer className="mt-12 flex justify-center space-x-6">
+        <footer className="mt-8 sm:mt-12 flex justify-center space-x-4 sm:space-x-6">
           {[
             { icon: Instagram, href: "https://www.instagram.com/ramesivano/", label: "Instagram" },
             { icon: Twitter, href: "https://x.com/ramesivano?s=11", label: "Twitter" }
@@ -316,13 +316,17 @@ export default function ArtistLinkTree() {
 
       {/* About Modal */}
       <Dialog open={isAboutOpen} onOpenChange={setIsAboutOpen}>
-        <DialogContent className="bg-gray-900 text-gray-300 border border-indigo-500">
+        <DialogContent className="bg-gray-900 text-gray-300 border border-indigo-500 p-4 sm:p-6 max-h-[90vh] overflow-y-auto">
           <DialogHeader>
-            <DialogTitle className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">About the Artist</DialogTitle>
-            <DialogDescription className="text-gray-400">Learn more about Ramé&apos;s journey in music</DialogDescription>
+            <DialogTitle className="text-xl sm:text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">
+              About the Artist
+            </DialogTitle>
+            <DialogDescription className="text-sm sm:text-base text-gray-400">
+              Learn more about Ramé's journey in music
+            </DialogDescription>
           </DialogHeader>
           <motion.div 
-            className="mt-4"
+            className="mt-4 text-sm sm:text-base"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
