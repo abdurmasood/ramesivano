@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card"
 import { Play, ChevronDown } from 'lucide-react'
 import { Playfair_Display } from 'next/font/google'
 import { Header } from "@/components/Header"
+import { useRouter } from 'next/navigation'
 
 const playfair = Playfair_Display({ 
   subsets: ['latin'],
@@ -12,6 +13,8 @@ const playfair = Playfair_Display({
 })
 
 export default function Component() {
+  const router = useRouter()
+  
   return (
     <div className={`min-h-screen bg-[#051b2c] relative overflow-hidden ${playfair.className}`}>
       {/* Ambient light effects */}
@@ -34,10 +37,17 @@ export default function Component() {
                 Chapter 1: The Beginning
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button className="bg-[#23b9d6] hover:bg-[#1fa3bd] text-white w-full sm:w-auto">
+                <Button 
+                  className="bg-[#23b9d6] hover:bg-[#1fa3bd] text-white w-full sm:w-auto"
+                  onClick={() => window.open('https://www.youtube.com/channel/UCgha49SDKezqu_RUe_u6qaQ', '_blank')}
+                >
                   Listen Now
                 </Button>
-                <Button variant="outline" className="border-[#ff6b3d] text-[#ff6b3d] hover:bg-[#ff6b3d] hover:text-white w-full sm:w-auto">
+                <Button 
+                  variant="outline" 
+                  className="border-[#ff6b3d] text-[#ff6b3d] hover:bg-[#ff6b3d] hover:text-white w-full sm:w-auto"
+                  onClick={() => router.push('/tour')}
+                >
                   Tour Dates
                 </Button>
               </div>
