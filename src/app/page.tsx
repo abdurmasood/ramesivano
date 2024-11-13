@@ -1,349 +1,167 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Music, Play, Video, Instagram, Twitter, User } from 'lucide-react'
 import { Button } from "@/components/ui/button"
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
+import { Card } from "@/components/ui/card"
+import { Play, ChevronDown, ShoppingBag } from 'lucide-react'
+import { Playfair_Display } from 'next/font/google'
+import { useState } from 'react'
 
-export default function ArtistLinkTree() {
-  const [mounted, setMounted] = useState(false)
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 })
-  const [activeSection, setActiveSection] = useState<string | null>(null)
-  const [isAboutOpen, setIsAboutOpen] = useState(false)
+const playfair = Playfair_Display({ 
+  subsets: ['latin'],
+  weight: ['400', '700'],
+})
 
-  useEffect(() => {
-    setMounted(true)
-    setDimensions({
-      width: window.innerWidth,
-      height: window.innerHeight
-    })
-
-    const handleResize = () => {
-      setDimensions({
-        width: window.innerWidth,
-        height: window.innerHeight
-      })
-    }
-
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
-
-  if (!mounted) {
-    return null
-  }
-
-  const toggleSection = (section: string) => {
-    if (section === "About") {
-      setIsAboutOpen(true)
-    } else {
-      setActiveSection(activeSection === section ? null : section)
-    }
-  }
+export default function Component() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-gray-300 flex flex-col items-center justify-center p-4 sm:p-6 overflow-hidden relative">
-      {/* Animated background */}
-      <div className="absolute inset-0 overflow-hidden backdrop-blur-[100px]">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 opacity-20 blur-xl"
-            style={{
-              width: Math.random() * 300 + 100,
-              height: Math.random() * 300 + 100,
-            }}
-            initial={{
-              x: Math.random() * dimensions.width,
-              y: Math.random() * dimensions.height,
-            }}
-            animate={{
-              x: Math.random() * dimensions.width,
-              y: Math.random() * dimensions.height,
-              rotate: 360,
-            }}
-            transition={{
-              duration: Math.random() * 100 + 50,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-          />
-        ))}
+    <div className={`min-h-screen bg-[#051b2c] relative overflow-hidden ${playfair.className}`}>
+      {/* Ambient light effects */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#23b9d6] opacity-20 blur-[100px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#ff6b3d] opacity-20 blur-[100px]" />
       </div>
 
-      {/* Content */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        className="w-full max-w-md relative z-10"
-      >
-        <header className="text-center mb-8 sm:mb-12">
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="relative w-32 h-32 sm:w-40 sm:h-40 mx-auto mb-4 sm:mb-6"
-          >
-            <div className="relative w-full h-full">
-              {/* White circle background with smoother gradient edge */}
-              <div 
-                className="absolute inset-0 rounded-full overflow-hidden z-10" 
-                style={{ 
-                  background: 'radial-gradient(circle at center, white 60%, rgba(255,255,255,0.9) 80%, transparent 100%)',
-                  padding: '2px' // Add slight padding for smoother edge
-                }}
+      <div className="relative">
+        <header className="border-b border-white/10">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="h-16 flex items-center justify-between">
+              {/* Mobile menu button */}
+              <Button 
+                variant="ghost" 
+                className="lg:hidden text-gray-400 hover:text-[#23b9d6]"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               >
-                {/* Profile Image with improved styling */}
-                <img
-                  src="/profile.jpeg"
-                  alt="Ramé Sivano"
-                  className="w-full h-full object-cover rounded-full"
-                  style={{
-                    position: 'relative',
-                    zIndex: 11,
-                    filter: 'brightness(1.02)',
-                  }}
-                />
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </Button>
+
+              {/* Desktop Navigation */}
+              <nav className="hidden lg:flex items-center space-x-1">
+                <Button variant="ghost" className="group px-4 py-2 text-gray-400 hover:text-[#23b9d6]">
+                  Music
+                  <ChevronDown className="ml-1 h-4 w-4 transition-transform group-hover:rotate-180" />
+                </Button>
+                <Button variant="ghost" className="px-4 py-2 text-gray-400 hover:text-[#23b9d6]">
+                  Shop
+                </Button>
+                <Button variant="ghost" className="px-4 py-2 text-gray-400 hover:text-[#23b9d6]">
+                  Tour
+                </Button>
+                <Button variant="ghost" className="px-4 py-2 text-gray-400 hover:text-[#23b9d6]">
+                  Videos
+                </Button>
+              </nav>
+
+              {/* Desktop Icons */}
+              <div className="hidden lg:flex items-center space-x-4">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#23b9d6]">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#23b9d6]">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#23b9d6]">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a href="https://spotify.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#23b9d6]">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                </a>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#23b9d6]">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+                <Button variant="ghost" className="text-gray-400 hover:text-[#23b9d6]">
+                  <ShoppingBag className="w-5 h-5" />
+                </Button>
               </div>
-              
-              {/* Enhanced outer glowing circle */}
-              <motion.div
-                className="absolute inset-[-8px] rounded-full"
-                animate={{
-                  scale: [1, 1.1, 1],
-                  opacity: [0.4, 0.2, 0.4],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                style={{
-                  background: 'linear-gradient(45deg, rgba(59, 130, 246, 0.4), rgba(34, 211, 238, 0.4))',
-                  filter: 'blur(8px)',
-                  zIndex: 5
-                }}
-              />
-              
-              {/* Enhanced inner glowing circle */}
-              <motion.div
-                className="absolute inset-[-4px] rounded-full"
-                animate={{
-                  scale: [1, 1.15, 1],
-                  opacity: [0.5, 0.2, 0.5],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1.5
-                }}
-                style={{
-                  background: 'linear-gradient(45deg, rgba(34, 211, 238, 0.6), rgba(59, 130, 246, 0.6))',
-                  filter: 'blur(3px)',
-                  zIndex: 6
-                }}
-              />
             </div>
-          </motion.div>
-          
-          <motion.h1 
-            className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-500 mb-2"
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-          >
-            Ramé Sivano
-          </motion.h1>
-          <motion.p 
-            className="text-lg sm:text-xl text-gray-400"
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.5 }}
-          >
-            "The Begininng"
-          </motion.p>
+
+            {/* Mobile Menu */}
+            {isMobileMenuOpen && (
+              <div className="lg:hidden py-4 border-t border-white/10">
+                <nav className="flex flex-col space-y-2">
+                  <Button variant="ghost" className="w-full justify-start px-4 py-2 text-gray-400 hover:text-[#23b9d6]">
+                    Music
+                    <ChevronDown className="ml-1 h-4 w-4" />
+                  </Button>
+                  <Button variant="ghost" className="w-full justify-start px-4 py-2 text-gray-400 hover:text-[#23b9d6]">
+                    Shop
+                  </Button>
+                  <Button variant="ghost" className="w-full justify-start px-4 py-2 text-gray-400 hover:text-[#23b9d6]">
+                    Tour
+                  </Button>
+                  <Button variant="ghost" className="w-full justify-start px-4 py-2 text-gray-400 hover:text-[#23b9d6]">
+                    Videos
+                  </Button>
+                </nav>
+                
+                <div className="flex justify-center space-x-4 mt-4 pt-4 border-t border-white/10">
+                  {/* Social icons for mobile menu */}
+                  {/* Copy the social icon links from above */}
+                </div>
+              </div>
+            )}
+          </div>
         </header>
 
-        <nav className="space-y-3 sm:space-y-4 mb-8 sm:mb-12">
-          {[
-            { 
-              icon: Play, 
-              text: "Listen on Spotify", 
-              color: "from-green-500 to-green-700",
-              href: "https://open.spotify.com/artist/5nkyoqkxYOlgg6lbofcBZB?si=arP6_zhbTKCbGq1LNvqJ9g"
-            },
-            { 
-              icon: Music, 
-              text: "Listen on Apple Music", 
-              color: "from-pink-500 to-pink-700",
-              href: "https://music.apple.com/us/artist/ram%C3%A9-sivano/1694371021"
-            },
-            { 
-              icon: Video, 
-              text: "Watch on YouTube", 
-              color: "from-red-500 to-red-700",
-              href: "https://www.youtube.com/channel/UCgha49SDKezqu_RUe_u6qaQ"
-            }
-          ].map((item, index) => (
-            <motion.div
-              key={item.text}
-              initial={{ x: -50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ delay: 0.5 + index * 0.1, duration: 0.5 }}
-            >
-              <Button
-                variant="outline"
-                className={`w-full bg-gradient-to-r ${item.color} hover:opacity-90 text-gray-100 hover:text-gray-200 border-none shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl`}
-                onClick={() => item.href && window.open(item.href, '_blank')}
+        {/* Rest of the content */}
+        <div className="relative max-w-6xl mx-auto px-4 py-12 sm:py-20">
+          <main className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+            <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
+              <h2 className="text-4xl sm:text-5xl font-bold leading-tight text-white">
+                Ramé Sivano
+              </h2>
+              <p className="text-xl sm:text-2xl text-[#23b9d6] font-semibold">
+                Chapter 1: The Beginning
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <Button className="bg-[#23b9d6] hover:bg-[#1fa3bd] text-white w-full sm:w-auto">
+                  Listen Now
+                </Button>
+                <Button variant="outline" className="border-[#ff6b3d] text-[#ff6b3d] hover:bg-[#ff6b3d] hover:text-white w-full sm:w-auto">
+                  Tour Dates
+                </Button>
+              </div>
+            </div>
+
+            <Card className="bg-black/20 backdrop-blur-sm border-0 overflow-hidden relative group mt-8 lg:mt-0">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#23b9d6]/20 to-[#ff6b3d]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202024-11-13%20at%2012.35.05_007fabdd.jpg-oonnWn9Y8Qb9BxxtMyjq5Hqm2lWqie.jpeg"
+                alt="Atmospheric portrait of Ramé Sivano in blue and orange lighting"
+                className="w-full aspect-auto sm:h-[600px] object-contain sm:object-cover"
+              />
+              <Button 
+                className="absolute bottom-4 right-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white rounded-full p-3"
+                aria-label="Play featured track"
               >
-                <item.icon className="mr-2 h-5 w-5" />
-                {item.text}
+                <Play className="w-6 h-6" />
               </Button>
-            </motion.div>
-          ))}
-        </nav>
+            </Card>
+          </main>
 
-        <motion.section 
-          className="mb-8 sm:mb-12 bg-gray-900 bg-opacity-50 p-4 sm:p-6 rounded-xl shadow-2xl backdrop-blur-sm border border-gray-800"
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.8, duration: 0.5 }}
-        >
-          <h2 className="text-xl sm:text-2xl font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-500">Latest Release</h2>
-          <div className="aspect-w-16 aspect-h-9 mb-4 rounded-lg overflow-hidden shadow-lg">
-            <iframe
-              src="https://www.youtube.com/embed/50WmEK3oS6g"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="w-full h-full"
-            ></iframe>
-          </div>
-          <p className="text-lg text-gray-300">&quot;A Different Kind of Love&quot; - New Single Out Now</p>
-        </motion.section>
+          <section className="mt-12 sm:mt-20">
+            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6 sm:mb-8 text-center lg:text-left">Latest Release</h3>
+            <div className="aspect-video w-full max-w-3xl mx-auto">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                title="Ramé Sivano - The Beginning (Official Music Video)"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="rounded-lg shadow-lg"
+              ></iframe>
+            </div>
+          </section>
 
-        <motion.div
-          className="space-y-6"
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 1, duration: 0.5 }}
-        >
-          {[
-            { title: "About", content: "Learn more about my journey in music.", icon: User, color: "indigo" }
-          ].map((item) => (
-            <motion.div 
-              key={item.title} 
-              className={`bg-gray-900 bg-opacity-50 rounded-lg overflow-hidden shadow-lg border border-${item.color}-500`}
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.2 }}
-            >
-              <button
-                onClick={() => toggleSection(item.title)}
-                className={`w-full p-4 text-left font-semibold text-gray-200 hover:bg-${item.color}-900 hover:bg-opacity-30 transition-colors duration-200 flex items-center justify-between`}
-              >
-                <span className="flex items-center">
-                  <item.icon className={`mr-3 h-6 w-6 text-${item.color}-400`} />
-                  {item.title}
-                </span>
-                <motion.span
-                  animate={{ rotate: activeSection === item.title ? 180 : 0 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  ▼
-                </motion.span>
-              </button>
-              <AnimatePresence>
-                {activeSection === item.title && item.title === "Tour Dates" && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className={`p-4 bg-${item.color}-900 bg-opacity-20 text-gray-300`}
-                  >
-                    <motion.p
-                      initial={{ y: -10, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ delay: 0.1, duration: 0.3 }}
-                    >
-                      {item.content}
-                    </motion.p>
-                    <motion.ul className="mt-2 space-y-2" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2, duration: 0.3 }}>
-                      <li className="flex justify-between items-center">
-                        <span>New York, NY</span>
-                        <span className="text-blue-400">June 15, 2023</span>
-                      </li>
-                      <li className="flex justify-between items-center">
-                        <span>Los Angeles, CA</span>
-                        <span className="text-blue-400">June 22, 2023</span>
-                      </li>
-                      <li className="flex justify-between items-center">
-                        <span>Chicago, IL</span>
-                        <span className="text-blue-400">June 29, 2023</span>
-                      </li>
-                    </motion.ul>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        <footer className="mt-8 sm:mt-12 flex justify-center space-x-4 sm:space-x-6">
-          {[
-            { icon: Instagram, href: "https://www.instagram.com/ramesivano/", label: "Instagram" },
-            { icon: Twitter, href: "https://x.com/ramesivano?s=11", label: "Twitter" }
-          ].map((item, index) => (
-            <motion.a
-              key={item.label}
-              href={item.href}
-              target="_blank"  // Added to open links in new tab
-              rel="noopener noreferrer"  // Added for security best practices
-              className="text-gray-400 hover:text-gray-200 transition-colors duration-200"
-              initial={{ scale: 0, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 1.2 + index * 0.1, duration: 0.3 }}
-              whileHover={{ scale: 1.2, rotate: 5 }}
-              aria-label={item.label}
-            >
-              <item.icon className="h-8 w-8" />
-            </motion.a>
-          ))}
-        </footer>
-      </motion.div>
-
-      {/* About Modal */}
-      <Dialog open={isAboutOpen} onOpenChange={setIsAboutOpen}>
-        <DialogContent className="bg-gray-900 text-gray-300 border border-indigo-500 p-4 sm:p-6 max-h-[90vh] overflow-y-auto">
-          <DialogHeader>
-            <DialogTitle className="text-xl sm:text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">
-              About the Artist
-            </DialogTitle>
-            <DialogDescription className="text-sm sm:text-base text-gray-400">
-              Learn more about Ramé's journey in music
-            </DialogDescription>
-          </DialogHeader>
-          <motion.div 
-            className="mt-4 text-sm sm:text-base"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            <p className="mb-4">
-            Hailing from the capital of Pakistan, Ramé began his journey into the arts at the age of 10. He spent his early years solidifying a firm footing in the independent music scene in Pakistan by touring across the country as a cover artist. Approach 2016, Ramé took a break from touring and moved to the United Kingdom, focusing more on his lyrical expression. 
-            </p>
-            <p className="mb-4">
-            Ramé frequently cites his inspirations as Atif Aslam, Arijit Singh and Xulfi (from Call The Band) growing up. After travelling halfway across the globe, he spent a significant period of time crafting his own voice, studying artists like Post Malone, The Weeknd, Joji, Ed Sheeran, Michael Jackson and merging their collective sound with his roots.            </p>
-            <p>
-            Today Ramé taps deeper in himself to connect with his audience. His artistic vision is boundless, constantly challenging himself musically and lyrically to explore his limits. Ramé’s discography is a testament to his commitment to growth as an artist. He believes in being true to his vision and due to his raw expression, others are finding it easy to believe in him too.            </p>
-          </motion.div>
-          <Button onClick={() => setIsAboutOpen(false)} className="mt-4 bg-indigo-500 hover:bg-indigo-600 text-white">
-            Close
-          </Button>
-        </DialogContent>
-      </Dialog>
+          <footer className="mt-12 sm:mt-20 text-center">
+            <p className="text-xs text-gray-400">© 2024 Ramé Sivano. All rights reserved.</p>
+          </footer>
+        </div>
+      </div>
     </div>
   )
 }
