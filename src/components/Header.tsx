@@ -3,20 +3,24 @@
 import { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import Link from 'next/link'
+import { useCart } from '@/contexts/CartContext'
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { cartCount } = useCart()
 
   return (
     <header className="border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4">
         <div className="h-16 flex items-center justify-between">
           {/* Mobile Home Icon */}
-          <Link href="/" className="lg:hidden text-gray-400 hover:text-[#23b9d6]">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-            </svg>
-          </Link>
+          <div className="lg:hidden flex items-center space-x-4">
+            <Link href="/" className="lg:hidden text-gray-400 hover:text-[#23b9d6]">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-1">
@@ -78,6 +82,11 @@ export function Header() {
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.75} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                   </svg>
+                  {cartCount > 0 && (
+                    <span className="absolute -top-2 -right-2 bg-[#ff6b3d] text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+                      {cartCount}
+                    </span>
+                  )}
                 </div>
               </Link>
             </div>
@@ -85,12 +94,17 @@ export function Header() {
             {/* Mobile menu button - moved to right */}
             <Button 
               variant="ghost" 
-              className="lg:hidden text-gray-400 hover:text-[#23b9d6]"
+              className="lg:hidden text-gray-400 hover:text-[#23b9d6] relative"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
+              {cartCount > 0 && (
+                <span className="absolute top-0 right-0 bg-[#ff6b3d] text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+                  {cartCount}
+                </span>
+              )}
             </Button>
           </div>
         </div>
@@ -151,9 +165,16 @@ export function Header() {
                     href="/KaunHaiTu" 
                     className="flex items-center space-x-3 px-4 py-2 text-gray-400 hover:text-[#23b9d6] hover:bg-white/5 rounded-md"
                   >
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.75} viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                    </svg>
+                    <div className="relative">
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.75} viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                      </svg>
+                      {cartCount > 0 && (
+                        <span className="absolute -top-2 -right-2 bg-[#ff6b3d] text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+                          {cartCount}
+                        </span>
+                      )}
+                    </div>
                     <span>Cart</span>
                   </Link>
                 </div>

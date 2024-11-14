@@ -8,6 +8,7 @@ import { useState } from 'react'
 import { Header } from "@/components/Header"
 import { Footer } from "@/components/Footer"
 import { useToast } from "@/hooks/use-toast"
+import { useCart } from '@/contexts/CartContext'
 
 const playfair = Playfair_Display({ 
   subsets: ['latin'],
@@ -24,14 +25,20 @@ const products = [
 ]
 
 export default function Component() {
-  const [cartCount, setCartCount] = useState(0)
+  const { addToCart } = useCart()
   const { toast } = useToast()
 
-  const addToCart = (productName: string) => {
-    setCartCount(prevCount => prevCount + 1)
+  const handleAddToCart = (product: any) => {
+    addToCart({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+    })
+    
     toast({
       title: "Added to Cart",
-      description: `${productName} has been added to your cart.`,
+      description: `${product.name} has been added to your cart.`,
       duration: 2000,
     })
   }
@@ -66,7 +73,7 @@ export default function Component() {
                   <p className="text-[#23b9d6] font-bold mb-4">${product.price.toFixed(2)}</p>
                   <Button 
                     className="w-full bg-[#ff6b3d] hover:bg-[#e55d2d] text-white"
-                    onClick={() => addToCart(product.name)}
+                    onClick={() => handleAddToCart(product)}
                   >
                     Add to Cart
                   </Button>
