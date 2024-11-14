@@ -35,7 +35,7 @@ export default function Component() {
                 Ramé Sivano
               </h2>
               <p className="text-xl sm:text-2xl text-[#23b9d6] font-semibold">
-                Chapter 1: The Beginning
+                Chapter 1: Who Are You?
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button 
@@ -47,9 +47,9 @@ export default function Component() {
                 <Button 
                   variant="outline" 
                   className="border-[#ff6b3d] text-[#ff6b3d] hover:bg-[#ff6b3d] hover:text-white w-full sm:w-auto"
-                  onClick={() => router.push('/tour')}
+                  onClick={() => router.push('/KaunHaiTu')}
                 >
-                  Tour Dates
+                  Merchandise
                 </Button>
               </div>
             </div>
