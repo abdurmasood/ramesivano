@@ -2,7 +2,6 @@
 
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { ShoppingCart } from 'lucide-react'
 import { Playfair_Display } from 'next/font/google'
 import Image from 'next/image'
 import { useState } from 'react'
@@ -17,7 +16,7 @@ const playfair = Playfair_Display({
 
 const products = [
   { id: 1, name: "Chapter 1 Vinyl", price: 29.99, image: "/placeholder.svg?height=400&width=400" },
-  { id: 2, name: "Tour T-Shirt", price: 24.99, image: "/placeholder.svg?height=400&width=400" },
+  { id: 2, name: "Tour T-Shirt", price: 24.99, image: "/shop/products/tour-t-shirt/front.jpeg" },
   { id: 3, name: "Signed Poster", price: 19.99, image: "/placeholder.svg?height=400&width=400" },
   { id: 4, name: "Logo Hoodie", price: 49.99, image: "/placeholder.svg?height=400&width=400" },
   { id: 5, name: "Enamel Pin Set", price: 14.99, image: "/placeholder.svg?height=400&width=400" },
