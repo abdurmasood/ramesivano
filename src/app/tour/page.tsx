@@ -5,7 +5,8 @@ import { Card } from "@/components/ui/card"
 import { Calendar } from 'lucide-react'
 import { Playfair_Display } from 'next/font/google'
 import { useRef } from 'react'
-import { Header } from "@/components/Header"
+import { Header } from '@/components/Header'
+import { Footer } from "@/components/Footer"
 
 const playfair = Playfair_Display({ 
   subsets: ['latin'],
@@ -69,9 +70,7 @@ export default function Component() {
             </form>
           </div>
 
-          <footer className="mt-20 text-center">
-            <p className="text-xs text-gray-400">© 2024 Ramé Sivano. All rights reserved.</p>
-          </footer>
+          <Footer />
         </div>
       </div>
     </div>

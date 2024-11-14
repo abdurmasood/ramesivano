@@ -2,10 +2,11 @@
 
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Play, ChevronDown } from 'lucide-react'
+import { Play } from 'lucide-react'
 import { Playfair_Display } from 'next/font/google'
 import { Header } from "@/components/Header"
 import { useRouter } from 'next/navigation'
+import { Footer } from "@/components/Footer"
 
 const playfair = Playfair_Display({ 
   subsets: ['latin'],
@@ -85,9 +86,7 @@ export default function Component() {
             </div>
           </section>
 
-          <footer className="mt-12 sm:mt-20 text-center">
-            <p className="text-xs text-gray-400">© 2024 Ramé Sivano. All rights reserved.</p>
-          </footer>
+          <Footer />
         </div>
       </div>
     </div>
