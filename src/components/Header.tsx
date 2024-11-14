@@ -121,7 +121,7 @@ export function Header() {
                   </Button>
                 </div>
 
-                {/* Navigation - removed Home button from mobile menu */}
+                {/* Navigation */}
                 <nav className="space-y-2">
                   <Link href="/chapters" className="block">
                     <Button variant="ghost" className="w-full justify-start px-4 py-2 text-gray-400 hover:text-[#23b9d6] hover:bg-white/5">
@@ -144,6 +144,19 @@ export function Header() {
                     </Button>
                   </Link>
                 </nav>
+
+                {/* Cart Button for Mobile */}
+                <div className="pt-6 border-t border-white/10">
+                  <Link 
+                    href="/KaunHaiTu" 
+                    className="flex items-center space-x-3 px-4 py-2 text-gray-400 hover:text-[#23b9d6] hover:bg-white/5 rounded-md"
+                  >
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.75} viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                    <span>Cart</span>
+                  </Link>
+                </div>
                 
                 {/* Social Icons */}
                 <div className="pt-6 border-t border-white/10">
