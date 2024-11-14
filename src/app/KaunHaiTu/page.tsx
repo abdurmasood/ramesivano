@@ -8,6 +8,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { Header } from "@/components/Header"
 import { Footer } from "@/components/Footer"
+import { useToast } from "@/hooks/use-toast"
 
 const playfair = Playfair_Display({ 
   subsets: ['latin'],
@@ -25,9 +26,15 @@ const products = [
 
 export default function Component() {
   const [cartCount, setCartCount] = useState(0)
+  const { toast } = useToast()
 
-  const addToCart = () => {
+  const addToCart = (productName: string) => {
     setCartCount(prevCount => prevCount + 1)
+    toast({
+      title: "Added to Cart",
+      description: `${productName} has been added to your cart.`,
+      duration: 2000,
+    })
   }
 
   return (
@@ -60,7 +67,7 @@ export default function Component() {
                   <p className="text-[#23b9d6] font-bold mb-4">${product.price.toFixed(2)}</p>
                   <Button 
                     className="w-full bg-[#ff6b3d] hover:bg-[#e55d2d] text-white"
-                    onClick={addToCart}
+                    onClick={() => addToCart(product.name)}
                   >
                     Add to Cart
                   </Button>
