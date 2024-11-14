@@ -32,7 +32,7 @@ export default function Component() {
         <Header />
 
         {/* Main Content */}
-        <div className="relative max-w-6xl mx-auto px-4 py-20">
+        <div className="relative max-w-6xl mx-auto px-4 py-12 sm:py-20">
           <div className="text-center mb-16">
             <h1 className="text-5xl font-bold text-white mb-4">Tour Dates</h1>
           </div>
@@ -54,7 +54,7 @@ export default function Component() {
           </Card>
 
           {/* Newsletter Signup */}
-          <div ref={subscribeRef} className="mt-20 text-center scroll-mt-20">
+          <div ref={subscribeRef} className="mt-20 text-center scroll-mt-20 mb-8">
             <h3 className="text-2xl font-semibold text-white mb-4">Join the Journey</h3>
             <p className="text-gray-400 mb-6">Sign up to receive tour updates and exclusive content.</p>
             <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
