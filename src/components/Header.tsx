@@ -75,7 +75,7 @@ export function Header() {
 
               {/* Cart Icon - Separated and styled differently */}
               <Link 
-                href="/KaunHaiTu" 
+                href="/cart" 
                 className="flex items-center p-2 rounded-md text-gray-400 hover:text-[#23b9d6] hover:bg-white/5 transition-colors"
               >
                 <div className="relative">
@@ -162,7 +162,7 @@ export function Header() {
                 {/* Cart Button for Mobile */}
                 <div className="pt-6 border-t border-white/10">
                   <Link 
-                    href="/KaunHaiTu" 
+                    href="/cart" 
                     className="flex items-center space-x-3 px-4 py-2 text-gray-400 hover:text-[#23b9d6] hover:bg-white/5 rounded-md"
                   >
                     <div className="relative">
