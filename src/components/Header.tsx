@@ -44,11 +44,6 @@ export function Header() {
                 Tour
               </Button>
             </Link>
-            <Link href="/videos">
-              <Button variant="ghost" className="px-4 py-2 text-gray-400 hover:text-[#23b9d6]">
-                Videos
-              </Button>
-            </Link>
           </nav>
 
           {/* Desktop Icons and Mobile Menu Button */}
@@ -150,11 +145,6 @@ export function Header() {
                   <Link href="/tour" className="block">
                     <Button variant="ghost" className="w-full justify-start px-4 py-2 text-gray-400 hover:text-[#23b9d6] hover:bg-white/5">
                       Tour
-                    </Button>
-                  </Link>
-                  <Link href="/videos" className="block">
-                    <Button variant="ghost" className="w-full justify-start px-4 py-2 text-gray-400 hover:text-[#23b9d6] hover:bg-white/5">
-                      Videos
                     </Button>
                   </Link>
                 </nav>
