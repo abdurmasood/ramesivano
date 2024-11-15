@@ -1,5 +1,11 @@
 import Image from 'next/image'
 import { Header } from '@/components/Header'
+import { Playfair_Display } from 'next/font/google'
+
+const playfair = Playfair_Display({ 
+  subsets: ['latin'],
+  weight: ['400', '700'],
+})
 
 export default function AlbumPage() {
   return (
@@ -10,7 +16,7 @@ export default function AlbumPage() {
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#ff6b3d] opacity-20 blur-[100px]" />
       </div>
 
-      <div className="relative">
+      <div className={`relative ${playfair.className}`}>
         <Header />
         <main className="h-[calc(100vh-4rem)]">
           {/* Album Container */}
@@ -26,13 +32,16 @@ export default function AlbumPage() {
               />
               
               {/* Permanent bottom gradient for blending */}
-              <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black to-transparent" />
             </div>
           </div>
         </main>
         
-        {/* Black section after the poster */}
-        <div className="bg-black h-32" />
+        {/* Black section after the poster with footer */}
+        <div className="bg-black">
+          <div className="h-12" />
+          <p className="text-xs text-gray-400 text-center pb-16">© 2024 Ramé Sivano. All rights reserved.</p>
+        </div>
       </div>
     </div>
   )

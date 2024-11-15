@@ -35,7 +35,7 @@ export default function Component() {
                 Ramé Sivano
               </h2>
               <p className="text-xl sm:text-2xl text-[#23b9d6] font-semibold">
-                Chapter 1: Who Are You?
+                Chapter 1: Kon Hai Tu?
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button 
