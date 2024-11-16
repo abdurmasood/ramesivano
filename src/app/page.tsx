@@ -13,7 +13,7 @@ const playfair = Playfair_Display({
   weight: ['400', '700'],
 })
 
-export default function HomePage() {
+export default function Component() {
   const router = useRouter()
   
   return (
@@ -47,7 +47,7 @@ export default function HomePage() {
                 <Button 
                   variant="outline" 
                   className="border-[#ff6b3d] text-[#ff6b3d] hover:bg-[#ff6b3d] hover:text-white w-full sm:w-auto"
-                  onClick={() => router.push('/KaunHaiTu')}
+                  onClick={() => router.push('/KonHaiTu')}
                 >
                   Merchandise
                 </Button>
