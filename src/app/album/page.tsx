@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import { Header } from '@/components/Header'
 import { Playfair_Display } from 'next/font/google'
@@ -21,8 +23,19 @@ export default function AlbumPage() {
         <main className="h-[calc(100vh-4rem)]">
           {/* Album Container */}
           <div className="relative h-full">
-            {/* Album Poster */}
-            <div className="relative h-full w-full">
+            {/* Mobile Poster (hidden on md and larger screens) */}
+            <div className="relative h-full w-full md:hidden">
+              <Image
+                src="/album-poster-mobile.jpg"
+                alt="Kon Hai Tu Album Cover"
+                fill
+                priority
+                className="object-contain"
+              />
+            </div>
+
+            {/* Desktop Poster (hidden on smaller screens) */}
+            <div className="relative h-full w-full hidden md:block">
               <Image
                 src="/album-poster-web.jpg"
                 alt="Kon Hai Tu Album Cover"
@@ -30,10 +43,10 @@ export default function AlbumPage() {
                 priority
                 className="object-contain"
               />
-              
-              {/* Permanent bottom gradient for blending */}
-              <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black to-transparent" />
             </div>
+              
+            {/* Permanent bottom gradient for blending */}
+            <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black to-transparent" />
           </div>
         </main>
         
