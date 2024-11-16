@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Calendar } from 'lucide-react'
 import { Playfair_Display } from 'next/font/google'
-import { useRef } from 'react'
+import { useRef, FormEvent } from 'react'
 import { Header } from '@/components/Header'
 import { Footer } from "@/components/Footer"
 
@@ -13,11 +13,16 @@ const playfair = Playfair_Display({
   weight: ['400', '700'],
 })
 
-export default function Component() {
+export default function TourPage() {
   const subscribeRef = useRef<HTMLDivElement>(null)
 
   const scrollToSubscribe = () => {
     subscribeRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    alert('Subscription functionality coming soon!')
   }
 
   return (
@@ -57,14 +62,14 @@ export default function Component() {
           <div ref={subscribeRef} className="mt-20 text-center scroll-mt-20 mb-8">
             <h3 className="text-2xl font-semibold text-white mb-4">Join the Journey</h3>
             <p className="text-gray-400 mb-6">Sign up to receive tour updates and exclusive content.</p>
-            <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
                 type="email"
                 placeholder="Enter your email"
                 className="flex-grow px-4 py-2 rounded-md bg-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#23b9d6]"
                 required
               />
-              <Button className="bg-[#ff6b3d] hover:bg-[#e55d2d] text-white px-6 py-2 rounded-md">
+              <Button type="submit" className="bg-[#ff6b3d] hover:bg-[#e55d2d] text-white px-6 py-2 rounded-md">
                 Subscribe
               </Button>
             </form>

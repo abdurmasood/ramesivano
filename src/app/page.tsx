@@ -13,7 +13,7 @@ const playfair = Playfair_Display({
   weight: ['400', '700'],
 })
 
-export default function Component() {
+export default function HomePage() {
   const router = useRouter()
   
   return (
