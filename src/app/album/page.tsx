@@ -30,7 +30,7 @@ export default function AlbumPage() {
                 alt="Kon Hai Tu Album Cover"
                 fill
                 priority
-                className="object-contain"
+                className="object-cover"
               />
             </div>
 
