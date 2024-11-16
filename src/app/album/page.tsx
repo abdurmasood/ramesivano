@@ -46,12 +46,12 @@ export default function AlbumPage() {
             </div>
               
             {/* Permanent bottom gradient for blending */}
-            <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black to-transparent md:from-transparent" />
           </div>
         </main>
         
         {/* Black section after the poster with footer */}
-        <div className="bg-black">
+        <div className="bg-black md:bg-transparent">
           <div className="h-12" />
           <p className="text-xs text-gray-400 text-center pb-16">© 2024 Ramé Sivano. All rights reserved.</p>
         </div>
