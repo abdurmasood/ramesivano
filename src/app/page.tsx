@@ -3,22 +3,44 @@
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Play } from 'lucide-react'
-import { Playfair_Display } from 'next/font/google'
+import { Poppins } from 'next/font/google'
 import { Header } from "@/components/layout/Header"
-import { useRouter } from 'next/navigation'
 import { Footer } from "@/components/layout/Footer"
 import Image from 'next/image'
+import { useState } from 'react'
 
-const playfair = Playfair_Display({ 
+const poppins = Poppins({
   subsets: ['latin'],
-  weight: ['400', '700'],
+  weight: ['200', '300', '400', '500', '600'],
 })
 
 export default function Component() {
-  const router = useRouter()
-  
+  const [isFading, setIsFading] = useState(false)
+  const [isStudioXFading, setIsStudioXFading] = useState(false)
+
+  const handleFindOut = () => {
+    setIsFading(true)
+    setTimeout(() => {
+      window.location.href = 'https://konhaitu.com'
+    }, 1000) // Wait for fade animation to complete
+  }
+
+  const handleStudioX = () => {
+    setIsStudioXFading(true)
+    setTimeout(() => {
+      window.location.href = 'https://studiox.vip'
+    }, 1000) // Wait for fade animation to complete
+  }
+
   return (
-    <div className={`min-h-screen bg-[#051b2c] relative overflow-hidden ${playfair.className}`}>
+    <div className="min-h-screen bg-[#051b2c] relative overflow-hidden">
+      {/* Fade to black overlay */}
+      <div 
+        className={`fixed inset-0 bg-black z-50 pointer-events-none transition-opacity duration-1000 ${
+          isFading || isStudioXFading ? 'opacity-100' : 'opacity-0'
+        }`}
+      />
+      
       {/* Ambient light effects */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#23b9d6] opacity-20 blur-[100px]" />
@@ -32,25 +54,25 @@ export default function Component() {
         <div className="relative max-w-6xl mx-auto px-4 py-12 sm:py-20">
           <main className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
             <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
-              <h2 className="text-4xl sm:text-5xl font-bold leading-tight text-white">
+              <h2 className={`text-4xl sm:text-5xl font-light leading-tight text-white ${poppins.className}`}>
                 Ramé Sivano
               </h2>
-              <p className="text-xl sm:text-2xl text-[#23b9d6] font-semibold">
+              <p className={`text-xl sm:text-2xl text-[#23b9d6] font-light ${poppins.className}`}>
                 Chapter 1: Kon Hai Tu?
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button 
-                  className="bg-[#23b9d6] hover:bg-[#1fa3bd] text-white w-full sm:w-auto"
-                  onClick={() => window.open('https://www.youtube.com/channel/UCgha49SDKezqu_RUe_u6qaQ', '_blank')}
+                  className={`bg-[#23b9d6] hover:bg-[#1fa3bd] text-white w-full sm:w-auto ${poppins.className}`}
+                  onClick={handleFindOut}
                 >
-                  Listen Now
+                  Find Out
                 </Button>
                 <Button 
                   variant="outline" 
-                  className="border-[#ff6b3d] text-[#ff6b3d] hover:bg-[#ff6b3d] hover:text-white w-full sm:w-auto"
-                  onClick={() => router.push('/kon-hai-tu')}
+                  className={`border-[#ff6b3d] text-[#ff6b3d] hover:bg-[#ff6b3d] hover:text-white w-full sm:w-auto ${poppins.className}`}
+                  onClick={handleStudioX}
                 >
-                  Merchandise
+                  Studio X
                 </Button>
               </div>
             </div>
@@ -74,14 +96,13 @@ export default function Component() {
           </main>
 
           <section className="mt-12 sm:mt-20">
-            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6 sm:mb-8 text-center lg:text-left">Latest Release</h3>
+            <h3 className={`text-2xl sm:text-3xl font-light text-white mb-6 sm:mb-8 text-center lg:text-left ${poppins.className}`}>Latest Release</h3>
             <div className="aspect-video w-full max-w-3xl mx-auto">
               <iframe
                 width="100%"
                 height="100%"
                 src="https://www.youtube.com/embed/50WmEK3oS6g?si=4Bk52PHMIXiwe77F"
                 title="Ramé Sivano - The Beginning (Official Music Video)"
-                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 className="rounded-lg shadow-lg"
