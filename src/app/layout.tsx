@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster"
 import { CartProvider } from '@/features/cart'
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
   title: "Ramé Sivano",
@@ -20,6 +21,7 @@ export default function RootLayout({
           {children}
         </CartProvider>
         <Toaster />
+        <Analytics />
       </body>
     </html>
   )
