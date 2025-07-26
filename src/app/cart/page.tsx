@@ -33,7 +33,7 @@ export default function CartPage() {
           <main className="flex-1 flex items-center justify-center pb-16">
             <div className="text-center px-4">
               <h1 className="text-3xl text-white mb-6">Your Cart is Empty</h1>
-              <a href="https://studiox.vip" target="_blank" rel="noopener noreferrer">
+              <a href="https://studiox.vip">
                 <Button className="bg-[#ff6b3d] hover:bg-[#e55d2d] text-white">
                   Visit Studio X
                 </Button>
@@ -102,7 +102,7 @@ export default function CartPage() {
             </div>
 
             <div className="text-center">
-              <a href="https://studiox.vip" target="_blank" rel="noopener noreferrer">
+              <a href="https://studiox.vip">
                 <Button variant="ghost" className="text-gray-400 hover:text-[#23b9d6]">
                   Visit Studio X
                 </Button>

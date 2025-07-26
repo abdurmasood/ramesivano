@@ -38,14 +38,14 @@ export default function Component() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button 
                   className="bg-[#23b9d6] hover:bg-[#1fa3bd] text-white w-full sm:w-auto"
-                  onClick={() => window.open('https://konhaitu.com', '_blank')}
+                  onClick={() => window.location.href = 'https://konhaitu.com'}
                 >
                   Find Out
                 </Button>
                 <Button 
                   variant="outline" 
                   className="border-[#ff6b3d] text-[#ff6b3d] hover:bg-[#ff6b3d] hover:text-white w-full sm:w-auto"
-                  onClick={() => window.open('https://studiox.vip', '_blank')}
+                  onClick={() => window.location.href = 'https://studiox.vip'}
                 >
                   Studio X
                 </Button>

@@ -34,7 +34,7 @@ export function Header() {
                 Album
               </Button>
             </Link>
-            <a href="https://studiox.vip" target="_blank" rel="noopener noreferrer">
+            <a href="https://studiox.vip">
               <Button variant="ghost" className="px-4 py-2 text-gray-400 hover:text-[#23b9d6]">
                 Studio X
               </Button>
@@ -137,7 +137,7 @@ export function Header() {
                       Album
                     </Button>
                   </Link>
-                  <a href="https://studiox.vip" target="_blank" rel="noopener noreferrer" className="block">
+                  <a href="https://studiox.vip" className="block">
                     <Button variant="ghost" className="w-full justify-start px-4 py-2 text-gray-400 hover:text-[#23b9d6] hover:bg-white/5">
                       Studio X
                     </Button>
