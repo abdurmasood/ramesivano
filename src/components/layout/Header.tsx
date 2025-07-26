@@ -43,11 +43,6 @@ export function Header() {
                 Studio X
               </Button>
             </a>
-            <Link href="/tour">
-              <Button variant="ghost" className={`px-4 py-2 text-gray-400 hover:text-[#23b9d6] ${poppins.className}`}>
-                Tour
-              </Button>
-            </Link>
           </nav>
 
           {/* Desktop Icons and Mobile Menu Button */}
@@ -125,11 +120,6 @@ export function Header() {
                       Studio X
                     </Button>
                   </a>
-                  <Link href="/tour" className="block">
-                    <Button variant="ghost" className={`w-full justify-start px-4 py-2 text-gray-400 hover:text-[#23b9d6] hover:bg-white/5 ${poppins.className}`}>
-                      Tour
-                    </Button>
-                  </Link>
                 </nav>
 
                 
