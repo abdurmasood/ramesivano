@@ -5,8 +5,8 @@ import { Card } from "@/components/ui/card"
 import { Calendar } from 'lucide-react'
 import { Playfair_Display } from 'next/font/google'
 import { useRef, FormEvent } from 'react'
-import { Header } from '@/components/Header'
-import { Footer } from "@/components/Footer"
+import { Header } from '@/components/layout/Header'
+import { Footer } from "@/components/layout/Footer"
 
 const playfair = Playfair_Display({ 
   subsets: ['latin'],

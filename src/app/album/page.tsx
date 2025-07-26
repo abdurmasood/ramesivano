@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { Header } from '@/components/Header'
+import { Header } from '@/components/layout/Header'
 import { Playfair_Display } from 'next/font/google'
 
 const playfair = Playfair_Display({ 
@@ -26,7 +26,7 @@ export default function AlbumPage() {
             {/* Mobile Poster (hidden on md and larger screens) */}
             <div className="relative h-full w-full md:hidden">
               <Image
-                src="/album-poster-mobile.jpg"
+                src="/images/album/album-poster-mobile.jpg"
                 alt="Kon Hai Tu Album Cover"
                 fill
                 priority
@@ -37,7 +37,7 @@ export default function AlbumPage() {
             {/* Desktop Poster (hidden on smaller screens) */}
             <div className="relative h-full w-full hidden md:block">
               <Image
-                src="/album-poster-web.jpg"
+                src="/images/album/album-poster-web.jpg"
                 alt="Kon Hai Tu Album Cover"
                 fill
                 priority
