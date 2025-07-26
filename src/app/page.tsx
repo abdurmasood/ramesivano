@@ -143,9 +143,9 @@ export default function Component() {
                 </Button>
               </div>
             </main>
-            
-            <Footer />
           </div>
+          
+          <Footer />
         </div>
 
         {/* Desktop Layout - Original */}
@@ -259,9 +259,9 @@ export default function Component() {
                 ></iframe>
               </div>
             </section>
-
-            <Footer />
           </div>
+
+          <Footer />
         </div>
       </div>
     </div>
