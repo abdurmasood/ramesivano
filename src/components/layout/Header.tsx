@@ -33,9 +33,9 @@ export function Header() {
                 Home
               </Button>
             </Link>
-            <Link href="/album">
+            <Link href="/lore">
               <Button variant="ghost" className={`px-4 py-2 text-gray-400 hover:text-[#23b9d6] ${poppins.className}`}>
-                Album
+                The Lore
               </Button>
             </Link>
             <a href="https://studiox.vip">
@@ -43,11 +43,6 @@ export function Header() {
                 Studio X
               </Button>
             </a>
-            <Link href="/tour">
-              <Button variant="ghost" className={`px-4 py-2 text-gray-400 hover:text-[#23b9d6] ${poppins.className}`}>
-                Tour
-              </Button>
-            </Link>
           </nav>
 
           {/* Desktop Icons and Mobile Menu Button */}
@@ -115,9 +110,9 @@ export function Header() {
 
                 {/* Navigation */}
                 <nav className="space-y-2">
-                  <Link href="/album" className="block">
+                  <Link href="/lore" className="block">
                     <Button variant="ghost" className={`w-full justify-start px-4 py-2 text-gray-400 hover:text-[#23b9d6] hover:bg-white/5 ${poppins.className}`}>
-                      Album
+                      The Lore
                     </Button>
                   </Link>
                   <a href="https://studiox.vip" className="block">
@@ -125,11 +120,6 @@ export function Header() {
                       Studio X
                     </Button>
                   </a>
-                  <Link href="/tour" className="block">
-                    <Button variant="ghost" className={`w-full justify-start px-4 py-2 text-gray-400 hover:text-[#23b9d6] hover:bg-white/5 ${poppins.className}`}>
-                      Tour
-                    </Button>
-                  </Link>
                 </nav>
 
                 
