@@ -4,9 +4,10 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Play } from 'lucide-react'
 import { Playfair_Display } from 'next/font/google'
-import { Header } from "@/components/Header"
+import { Header } from "@/components/layout/Header"
 import { useRouter } from 'next/navigation'
-import { Footer } from "@/components/Footer"
+import { Footer } from "@/components/layout/Footer"
+import Image from 'next/image'
 
 const playfair = Playfair_Display({ 
   subsets: ['latin'],
@@ -47,7 +48,7 @@ export default function Component() {
                 <Button 
                   variant="outline" 
                   className="border-[#ff6b3d] text-[#ff6b3d] hover:bg-[#ff6b3d] hover:text-white w-full sm:w-auto"
-                  onClick={() => router.push('/KonHaiTu')}
+                  onClick={() => router.push('/kon-hai-tu')}
                 >
                   Merchandise
                 </Button>
@@ -56,9 +57,11 @@ export default function Component() {
 
             <Card className="bg-black/20 backdrop-blur-sm border-0 overflow-hidden relative group mt-8 lg:mt-0">
               <div className="absolute inset-0 bg-gradient-to-br from-[#23b9d6]/20 to-[#ff6b3d]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <img
+              <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202024-11-13%20at%2012.35.05_007fabdd.jpg-oonnWn9Y8Qb9BxxtMyjq5Hqm2lWqie.jpeg"
                 alt="Atmospheric portrait of Ramé Sivano in blue and orange lighting"
+                width={800}
+                height={600}
                 className="w-full aspect-auto sm:h-[600px] object-contain sm:object-cover"
               />
               <Button 

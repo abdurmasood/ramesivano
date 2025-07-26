@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster"
-import { CartProvider } from '@/contexts/CartContext'
+import { CartProvider } from '@/features/cart'
 
 export const metadata: Metadata = {
   title: "Ramé Sivano",

@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Playfair_Display } from 'next/font/google'
 import Image from 'next/image'
-import { Header } from "@/components/Header"
-import { useCart } from '@/contexts/CartContext'
+import { Header } from "@/components/layout/Header"
+import { useCart } from '@/features/cart'
 import Link from "next/link"
 
 const playfair = Playfair_Display({ 
@@ -33,7 +33,7 @@ export default function CartPage() {
           <main className="flex-1 flex items-center justify-center pb-16">
             <div className="text-center px-4">
               <h1 className="text-3xl text-white mb-6">Your Cart is Empty</h1>
-              <Link href="/KaunHaiTu">
+              <Link href="/kon-hai-tu">
                 <Button className="bg-[#ff6b3d] hover:bg-[#e55d2d] text-white">
                   Continue Shopping
                 </Button>
@@ -102,7 +102,7 @@ export default function CartPage() {
             </div>
 
             <div className="text-center">
-              <Link href="/KaunHaiTu">
+              <Link href="/kon-hai-tu">
                 <Button variant="ghost" className="text-gray-400 hover:text-[#23b9d6]">
                   Continue Shopping
                 </Button>

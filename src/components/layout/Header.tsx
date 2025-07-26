@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import Link from 'next/link'
-import { useCart } from '@/contexts/CartContext'
+import { useCart } from '@/features/cart'
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -34,7 +34,7 @@ export function Header() {
                 Album
               </Button>
             </Link>
-            <Link href="/KonHaiTu">
+            <Link href="/kon-hai-tu">
               <Button variant="ghost" className="px-4 py-2 text-gray-400 hover:text-[#23b9d6]">
                 Shop
               </Button>

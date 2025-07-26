@@ -1,24 +1,9 @@
 'use client'
 
-import { createContext, useContext, useEffect, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
+import { CartItem, CartContextType } from './types'
 
-type CartItem = {
-  id: number
-  name: string
-  price: number
-  image: string
-  quantity: number
-}
-
-type CartContextType = {
-  cartItems: CartItem[]
-  addToCart: (product: Omit<CartItem, 'quantity'>) => void
-  removeFromCart: (productId: number) => void
-  updateQuantity: (productId: number, quantity: number) => void
-  cartCount: number
-}
-
-const CartContext = createContext<CartContextType | undefined>(undefined)
+export const CartContext = createContext<CartContextType | undefined>(undefined)
 
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [cartItems, setCartItems] = useState<CartItem[]>([])
@@ -93,10 +78,4 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   )
 }
 
-export function useCart() {
-  const context = useContext(CartContext)
-  if (context === undefined) {
-    throw new Error('useCart must be used within a CartProvider')
-  }
-  return context
-} 
+ 
