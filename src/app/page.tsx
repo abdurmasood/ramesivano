@@ -6,6 +6,7 @@ import { Play } from 'lucide-react'
 import { Poppins } from 'next/font/google'
 import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
+import { PageTransition, FadeOnly } from "@/components/animations"
 import Image from 'next/image'
 import { useState } from 'react'
 
@@ -33,7 +34,7 @@ export default function Component() {
   }
 
   return (
-    <div className="min-h-screen bg-[#051b2c] relative overflow-hidden">
+    <PageTransition className="min-h-screen bg-[#051b2c] relative overflow-hidden">
       {/* Fade to black overlay */}
       <div 
         className={`fixed inset-0 bg-black z-50 pointer-events-none transition-opacity duration-1000 ${
@@ -42,20 +43,23 @@ export default function Component() {
       />
       
       {/* Ambient light effects */}
-      <div className="absolute inset-0">
+      <FadeOnly delay={0.2} className="absolute inset-0">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#23b9d6] opacity-20 blur-[100px]" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#ff6b3d] opacity-20 blur-[100px]" />
-      </div>
+      </FadeOnly>
 
       <div className="relative">
-        <Header />
+        <FadeOnly delay={0.4}>
+          <Header />
+        </FadeOnly>
         
         {/* Mobile Layout - Video First */}
         <div className="md:hidden">
           <div className="relative max-w-6xl mx-auto px-4 py-8">
             {/* Latest Release - Hero on Mobile */}
-            <section className="mb-8">
-              <h3 className={`text-2xl font-light text-white mb-4 text-center ${poppins.className}`}>Latest Release</h3>
+            <FadeOnly delay={0.6}>
+              <section className="mb-8">
+                <h3 className={`text-2xl font-light text-white mb-4 text-center ${poppins.className}`}>Latest Release</h3>
               <div className="aspect-video w-full">
                 <iframe
                   width="100%"
@@ -67,10 +71,12 @@ export default function Component() {
                   className="rounded-lg shadow-lg"
                 ></iframe>
               </div>
-            </section>
+              </section>
+            </FadeOnly>
 
             {/* Music Streaming Links - Mobile Optimized */}
-            <div className="text-center mb-8">
+            <FadeOnly delay={0.8}>
+              <div className="text-center mb-8">
               <p className={`text-gray-400 text-sm mb-4 ${poppins.className}`}>Listen on</p>
               <div className="flex flex-col gap-3">
                 <a 
@@ -112,10 +118,12 @@ export default function Component() {
                   <span className={`font-medium ${poppins.className}`}>YouTube</span>
                 </a>
               </div>
-            </div>
+              </div>
+            </FadeOnly>
 
             {/* Compact Artist Section */}
-            <main className="text-center space-y-6">
+            <FadeOnly delay={1.0}>
+              <main className="text-center space-y-6">
               {/* Artist Info */}
               <div className="space-y-3">
                 <h2 className={`text-3xl font-light leading-tight text-white ${poppins.className}`}>
@@ -142,20 +150,24 @@ export default function Component() {
                   Studio X
                 </Button>
               </div>
-            </main>
+              </main>
+            </FadeOnly>
           </div>
           
-          <Footer />
+          <FadeOnly delay={1.2}>
+            <Footer />
+          </FadeOnly>
         </div>
 
         {/* Desktop Layout - Original */}
         <div className="hidden md:block">
           <div className="relative max-w-6xl mx-auto px-4 py-12 sm:py-20">
             <main className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
-              <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
-                <h2 className={`text-4xl sm:text-5xl font-light leading-tight text-white ${poppins.className}`}>
-                  Ramé Sivano
-                </h2>
+              <FadeOnly delay={0.6}>
+                <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
+                  <h2 className={`text-4xl sm:text-5xl font-light leading-tight text-white ${poppins.className}`}>
+                    Ramé Sivano
+                  </h2>
                 <p className={`text-xl sm:text-2xl text-[#23b9d6] font-light ${poppins.className}`}>
                   Chapter 1: Kon Hai Tu?
                 </p>
@@ -225,9 +237,11 @@ export default function Component() {
                     </a>
                   </div>
                 </div>
-              </div>
+                </div>
+              </FadeOnly>
 
-              <Card className="bg-black/20 backdrop-blur-sm border-0 overflow-hidden relative group mt-8 lg:mt-0">
+              <FadeOnly delay={0.8}>
+                <Card className="bg-black/20 backdrop-blur-sm border-0 overflow-hidden relative group mt-8 lg:mt-0">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#23b9d6]/20 to-[#ff6b3d]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202024-11-13%20at%2012.35.05_007fabdd.jpg-oonnWn9Y8Qb9BxxtMyjq5Hqm2lWqie.jpeg"
@@ -242,11 +256,13 @@ export default function Component() {
                 >
                   <Play className="w-6 h-6" />
                 </Button>
-              </Card>
+                </Card>
+              </FadeOnly>
             </main>
 
-            <section className="mt-12 sm:mt-20">
-              <h3 className={`text-2xl sm:text-3xl font-light text-white mb-6 sm:mb-8 text-center lg:text-left ${poppins.className}`}>Latest Release</h3>
+            <FadeOnly delay={1.0}>
+              <section className="mt-12 sm:mt-20">
+                <h3 className={`text-2xl sm:text-3xl font-light text-white mb-6 sm:mb-8 text-center lg:text-left ${poppins.className}`}>Latest Release</h3>
               <div className="aspect-video w-full max-w-3xl mx-auto">
                 <iframe
                   width="100%"
@@ -258,12 +274,15 @@ export default function Component() {
                   className="rounded-lg shadow-lg"
                 ></iframe>
               </div>
-            </section>
+              </section>
+            </FadeOnly>
           </div>
 
-          <Footer />
+          <FadeOnly delay={1.2}>
+            <Footer />
+          </FadeOnly>
         </div>
       </div>
-    </div>
+    </PageTransition>
   )
 }

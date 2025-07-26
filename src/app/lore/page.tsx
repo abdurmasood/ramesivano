@@ -2,6 +2,7 @@
 
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
+import { PageTransition, FadeOnly } from '@/components/animations'
 import { Poppins } from 'next/font/google'
 
 const poppins = Poppins({
@@ -11,32 +12,37 @@ const poppins = Poppins({
 
 export default function LorePage() {
   return (
-    <div className="min-h-screen bg-[#051b2c] relative overflow-hidden">
+    <PageTransition className="min-h-screen bg-[#051b2c] relative overflow-hidden">
       {/* Ambient light effects */}
-      <div className="absolute inset-0">
+      <FadeOnly delay={0.2} className="absolute inset-0">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#23b9d6] opacity-20 blur-[100px]" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#ff6b3d] opacity-20 blur-[100px]" />
-      </div>
+      </FadeOnly>
 
       <div className={`relative ${poppins.className}`}>
-        <Header />
+        <FadeOnly delay={0.4}>
+          <Header />
+        </FadeOnly>
         <main className="min-h-[calc(100vh-4rem)] flex items-center justify-center px-4 py-8">
           <div className="max-w-4xl mx-auto space-y-12">
             {/* Title */}
-            <div className="text-center">
-              <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-4">
-                The Lore
-              </h1>
-              <div className="w-24 h-1 bg-[#23b9d6] mx-auto"></div>
-            </div>
+            <FadeOnly delay={0.6}>
+              <div className="text-center">
+                <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-4">
+                  The Lore
+                </h1>
+                <div className="w-24 h-1 bg-[#23b9d6] mx-auto"></div>
+              </div>
+            </FadeOnly>
 
             {/* Story Content */}
             <div className="grid md:grid-cols-1 gap-8 sm:gap-12 text-gray-300 leading-relaxed">
               {/* Chapter 1 */}
-              <div className="space-y-4 sm:space-y-6">
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#23b9d6] mb-4">
-                  Origins
-                </h2>
+              <FadeOnly delay={0.8}>
+                <div className="space-y-4 sm:space-y-6">
+                  <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#23b9d6] mb-4">
+                    Origins
+                  </h2>
                 <p className="text-base sm:text-lg">
                   In the shadows of urban landscapes, where neon lights flicker against concrete walls, 
                   a sound was born. Ramé Sivano emerged from the collision of two worlds—the ancient 
@@ -47,13 +53,15 @@ export default function LorePage() {
                   Ramé found solace in the spaces others couldn&apos;t see. Music became the bridge, 
                   the translator of unspoken emotions and untold stories.
                 </p>
-              </div>
+                </div>
+              </FadeOnly>
 
               {/* Chapter 2 */}
-              <div className="space-y-4 sm:space-y-6">
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#ff6b3d] mb-4">
-                  The Quest
-                </h2>
+              <FadeOnly delay={1.0}>
+                <div className="space-y-4 sm:space-y-6">
+                  <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#ff6b3d] mb-4">
+                    The Quest
+                  </h2>
                 <p className="text-base sm:text-lg">
                   &ldquo;Kon Hai Tu&rdquo; began as a question whispered in the dark—who are you? 
                   But it became something more: a journey through identity, through belonging, 
@@ -64,13 +72,15 @@ export default function LorePage() {
                   that forms when authenticity meets artistry. The album doesn&apos;t provide answers—it 
                   invites you to ask better questions.
                 </p>
-              </div>
+                </div>
+              </FadeOnly>
 
               {/* Chapter 3 */}
-              <div className="space-y-4 sm:space-y-6">
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#23b9d6] mb-4">
-                  The Sound
-                </h2>
+              <FadeOnly delay={1.2}>
+                <div className="space-y-4 sm:space-y-6">
+                  <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#23b9d6] mb-4">
+                    The Sound
+                  </h2>
                 <p className="text-base sm:text-lg">
                   This is music for the spaces between—between sleep and waking, between 
                   languages, between heartbeats. It&apos;s the soundtrack to late-night conversations 
@@ -82,23 +92,28 @@ export default function LorePage() {
                   soundscapes, indie sensibilities, and global influences to create something 
                   entirely new. Something entirely human.
                 </p>
-              </div>
+                </div>
+              </FadeOnly>
             </div>
 
             {/* Call to Action */}
-            <div className="text-center pt-6 sm:pt-8">
-              <p className="text-lg sm:text-xl text-gray-400 italic">
-                &ldquo;In the end, we are all searching for the same thing—
-                <br className="hidden sm:block" />
-                <span className="block sm:inline">a moment of recognition, a glimpse of home.&rdquo;</span>
-              </p>
-              <p className="text-sm text-gray-500 mt-4">— Ramé Sivano</p>
-            </div>
+            <FadeOnly delay={1.4}>
+              <div className="text-center pt-6 sm:pt-8">
+                <p className="text-lg sm:text-xl text-gray-400 italic">
+                  &ldquo;In the end, we are all searching for the same thing—
+                  <br className="hidden sm:block" />
+                  <span className="block sm:inline">a moment of recognition, a glimpse of home.&rdquo;</span>
+                </p>
+                <p className="text-sm text-gray-500 mt-4">— Ramé Sivano</p>
+              </div>
+            </FadeOnly>
           </div>
         </main>
         
-        <Footer />
+        <FadeOnly delay={1.6}>
+          <Footer />
+        </FadeOnly>
       </div>
-    </div>
+    </PageTransition>
   )
 }
