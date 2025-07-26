@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import Link from 'next/link'
-import { useCart } from '@/features/cart'
 import { Poppins } from 'next/font/google'
 
 const poppins = Poppins({
@@ -13,7 +12,6 @@ const poppins = Poppins({
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const { cartCount } = useCart()
 
   return (
     <header className="border-b border-white/10">
@@ -56,7 +54,7 @@ export function Header() {
           <div className="flex items-center">
             <div className="hidden lg:flex items-center">
               {/* Social Icons */}
-              <div className="flex items-center space-x-4 mr-4 border-r border-white/10 pr-4">
+              <div className="flex items-center space-x-4">
                 <a href="https://www.instagram.com/ramesivano/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#23b9d6]">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                 </a>
@@ -74,38 +72,17 @@ export function Header() {
                 </a>
               </div>
 
-              {/* Cart Icon - Separated and styled differently */}
-              <Link 
-                href="/cart" 
-                className="flex items-center p-2 rounded-md text-gray-400 hover:text-[#23b9d6] hover:bg-white/5 transition-colors"
-              >
-                <div className="relative">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.75} viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                  </svg>
-                  {cartCount > 0 && (
-                    <span className="absolute -top-2 -right-2 bg-[#ff6b3d] text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
-                      {cartCount}
-                    </span>
-                  )}
-                </div>
-              </Link>
             </div>
             
             {/* Mobile menu button - moved to right */}
             <Button 
               variant="ghost" 
-              className="lg:hidden text-gray-400 hover:text-[#23b9d6] relative"
+              className="lg:hidden text-gray-400 hover:text-[#23b9d6]"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
-              {cartCount > 0 && (
-                <span className="absolute top-0 right-0 bg-[#ff6b3d] text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
-                  {cartCount}
-                </span>
-              )}
             </Button>
           </div>
         </div>
@@ -155,25 +132,6 @@ export function Header() {
                   </Link>
                 </nav>
 
-                {/* Cart Button for Mobile */}
-                <div className="pt-6 border-t border-white/10">
-                  <Link 
-                    href="/cart" 
-                    className="flex items-center space-x-3 px-4 py-2 text-gray-400 hover:text-[#23b9d6] hover:bg-white/5 rounded-md"
-                  >
-                    <div className="relative">
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.75} viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                      </svg>
-                      {cartCount > 0 && (
-                        <span className="absolute -top-2 -right-2 bg-[#ff6b3d] text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
-                          {cartCount}
-                        </span>
-                      )}
-                    </div>
-                    <span className={poppins.className}>Cart</span>
-                  </Link>
-                </div>
                 
                 {/* Social Icons */}
                 <div className="pt-6 border-t border-white/10">
