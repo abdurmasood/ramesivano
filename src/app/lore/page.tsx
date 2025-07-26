@@ -44,7 +44,7 @@ export default function LorePage() {
                 </p>
                 <p className="text-base sm:text-lg">
                   Growing up between cultures, between languages, between the old and the new, 
-                  Ramé found solace in the spaces others couldn't see. Music became the bridge, 
+                  Ramé found solace in the spaces others couldn&apos;t see. Music became the bridge, 
                   the translator of unspoken emotions and untold stories.
                 </p>
               </div>
@@ -55,13 +55,13 @@ export default function LorePage() {
                   The Quest
                 </h2>
                 <p className="text-base sm:text-lg">
-                  "Kon Hai Tu" began as a question whispered in the dark—who are you? 
+                  &ldquo;Kon Hai Tu&rdquo; began as a question whispered in the dark—who are you? 
                   But it became something more: a journey through identity, through belonging, 
                   through the maze of modern existence where everyone is searching for something real.
                 </p>
                 <p className="text-base sm:text-lg">
                   Each track in this collection is a fragment of that search, a piece of the puzzle 
-                  that forms when authenticity meets artistry. The album doesn't provide answers—it 
+                  that forms when authenticity meets artistry. The album doesn&apos;t provide answers—it 
                   invites you to ask better questions.
                 </p>
               </div>
@@ -73,12 +73,12 @@ export default function LorePage() {
                 </h2>
                 <p className="text-base sm:text-lg">
                   This is music for the spaces between—between sleep and waking, between 
-                  languages, between heartbeats. It's the soundtrack to late-night conversations 
+                  languages, between heartbeats. It&apos;s the soundtrack to late-night conversations 
                   with yourself, to moments when the city breathes and you finally remember 
                   how to breathe with it.
                 </p>
                 <p className="text-base sm:text-lg">
-                  Ramé Sivano's sound defies easy categorization, drawing from electronic 
+                  Ramé Sivano&apos;s sound defies easy categorization, drawing from electronic 
                   soundscapes, indie sensibilities, and global influences to create something 
                   entirely new. Something entirely human.
                 </p>
@@ -88,9 +88,9 @@ export default function LorePage() {
             {/* Call to Action */}
             <div className="text-center pt-6 sm:pt-8">
               <p className="text-lg sm:text-xl text-gray-400 italic">
-                "In the end, we are all searching for the same thing—
+                &ldquo;In the end, we are all searching for the same thing—
                 <br className="hidden sm:block" />
-                <span className="block sm:inline">a moment of recognition, a glimpse of home."</span>
+                <span className="block sm:inline">a moment of recognition, a glimpse of home.&rdquo;</span>
               </p>
               <p className="text-sm text-gray-500 mt-4">— Ramé Sivano</p>
             </div>
