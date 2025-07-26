@@ -6,7 +6,7 @@ import { Play } from 'lucide-react'
 import { Poppins } from 'next/font/google'
 import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
-import { PageTransition, FadeIn } from "@/components/animations"
+import { PageTransition, FadeOnly } from "@/components/animations"
 import Image from 'next/image'
 import { useState } from 'react'
 
@@ -43,21 +43,21 @@ export default function Component() {
       />
       
       {/* Ambient light effects */}
-      <FadeIn delay={0.1} className="absolute inset-0">
+      <FadeOnly delay={0.2} className="absolute inset-0">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#23b9d6] opacity-20 blur-[100px]" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#ff6b3d] opacity-20 blur-[100px]" />
-      </FadeIn>
+      </FadeOnly>
 
       <div className="relative">
-        <FadeIn delay={0.2}>
+        <FadeOnly delay={0.4}>
           <Header />
-        </FadeIn>
+        </FadeOnly>
         
         {/* Mobile Layout - Video First */}
         <div className="md:hidden">
           <div className="relative max-w-6xl mx-auto px-4 py-8">
             {/* Latest Release - Hero on Mobile */}
-            <FadeIn delay={0.3}>
+            <FadeOnly delay={0.6}>
               <section className="mb-8">
                 <h3 className={`text-2xl font-light text-white mb-4 text-center ${poppins.className}`}>Latest Release</h3>
               <div className="aspect-video w-full">
@@ -72,10 +72,10 @@ export default function Component() {
                 ></iframe>
               </div>
               </section>
-            </FadeIn>
+            </FadeOnly>
 
             {/* Music Streaming Links - Mobile Optimized */}
-            <FadeIn delay={0.4}>
+            <FadeOnly delay={0.8}>
               <div className="text-center mb-8">
               <p className={`text-gray-400 text-sm mb-4 ${poppins.className}`}>Listen on</p>
               <div className="flex flex-col gap-3">
@@ -119,10 +119,10 @@ export default function Component() {
                 </a>
               </div>
               </div>
-            </FadeIn>
+            </FadeOnly>
 
             {/* Compact Artist Section */}
-            <FadeIn delay={0.5}>
+            <FadeOnly delay={1.0}>
               <main className="text-center space-y-6">
               {/* Artist Info */}
               <div className="space-y-3">
@@ -151,19 +151,19 @@ export default function Component() {
                 </Button>
               </div>
               </main>
-            </FadeIn>
+            </FadeOnly>
           </div>
           
-          <FadeIn delay={0.6}>
+          <FadeOnly delay={1.2}>
             <Footer />
-          </FadeIn>
+          </FadeOnly>
         </div>
 
         {/* Desktop Layout - Original */}
         <div className="hidden md:block">
           <div className="relative max-w-6xl mx-auto px-4 py-12 sm:py-20">
             <main className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
-              <FadeIn delay={0.3} direction="left">
+              <FadeOnly delay={0.6}>
                 <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
                   <h2 className={`text-4xl sm:text-5xl font-light leading-tight text-white ${poppins.className}`}>
                     Ramé Sivano
@@ -238,9 +238,9 @@ export default function Component() {
                   </div>
                 </div>
                 </div>
-              </FadeIn>
+              </FadeOnly>
 
-              <FadeIn delay={0.4} direction="right">
+              <FadeOnly delay={0.8}>
                 <Card className="bg-black/20 backdrop-blur-sm border-0 overflow-hidden relative group mt-8 lg:mt-0">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#23b9d6]/20 to-[#ff6b3d]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <Image
@@ -257,10 +257,10 @@ export default function Component() {
                   <Play className="w-6 h-6" />
                 </Button>
                 </Card>
-              </FadeIn>
+              </FadeOnly>
             </main>
 
-            <FadeIn delay={0.5}>
+            <FadeOnly delay={1.0}>
               <section className="mt-12 sm:mt-20">
                 <h3 className={`text-2xl sm:text-3xl font-light text-white mb-6 sm:mb-8 text-center lg:text-left ${poppins.className}`}>Latest Release</h3>
               <div className="aspect-video w-full max-w-3xl mx-auto">
@@ -275,12 +275,12 @@ export default function Component() {
                 ></iframe>
               </div>
               </section>
-            </FadeIn>
+            </FadeOnly>
           </div>
 
-          <FadeIn delay={0.6}>
+          <FadeOnly delay={1.2}>
             <Footer />
-          </FadeIn>
+          </FadeOnly>
         </div>
       </div>
     </PageTransition>
