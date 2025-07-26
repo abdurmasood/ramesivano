@@ -15,9 +15,6 @@ const playfair = Playfair_Display({
 export default function CartPage() {
   const { cartItems } = useCart()
   
-  const totalAmount = cartItems.reduce((total, item) => 
-    total + (item.price * item.quantity), 0
-  )
 
   if (cartItems.length === 0) {
     return (
@@ -71,34 +68,15 @@ export default function CartPage() {
                     />
                     <div className="flex-1 min-w-0">
                       <h3 className="text-white text-lg truncate">{item.name}</h3>
-                      <p className="text-[#23b9d6]">${item.price.toFixed(2)}</p>
                     </div>
                     <div className="text-white text-sm">
                       Qty: {item.quantity}
-                    </div>
-                    <div className="text-white text-right text-sm">
-                      ${(item.price * item.quantity).toFixed(2)}
                     </div>
                   </div>
                 </Card>
               ))}
             </div>
 
-            <div className="bg-black/20 backdrop-blur-sm rounded-lg p-6 mb-8">
-              <div className="flex justify-between items-center text-white mb-6">
-                <span className="text-xl">Total</span>
-                <span className="text-2xl">${totalAmount.toFixed(2)}</span>
-              </div>
-              <Button 
-                className="w-full bg-[#ff6b3d] hover:bg-[#e55d2d] text-white text-lg py-6"
-                onClick={() => {
-                  // Implement checkout logic here
-                  alert('Checkout functionality coming soon!')
-                }}
-              >
-                Checkout
-              </Button>
-            </div>
 
             <div className="text-center">
               <a href="https://studiox.vip">
