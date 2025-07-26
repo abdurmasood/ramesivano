@@ -5,7 +5,6 @@ import { Card } from "@/components/ui/card"
 import { Play } from 'lucide-react'
 import { Playfair_Display } from 'next/font/google'
 import { Header } from "@/components/layout/Header"
-import { useRouter } from 'next/navigation'
 import { Footer } from "@/components/layout/Footer"
 import Image from 'next/image'
 
@@ -15,8 +14,6 @@ const playfair = Playfair_Display({
 })
 
 export default function Component() {
-  const router = useRouter()
-  
   return (
     <div className={`min-h-screen bg-[#051b2c] relative overflow-hidden ${playfair.className}`}>
       {/* Ambient light effects */}
@@ -41,16 +38,16 @@ export default function Component() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button 
                   className="bg-[#23b9d6] hover:bg-[#1fa3bd] text-white w-full sm:w-auto"
-                  onClick={() => window.open('https://www.youtube.com/channel/UCgha49SDKezqu_RUe_u6qaQ', '_blank')}
+                  onClick={() => window.open('https://konhaitu.com', '_blank')}
                 >
-                  Listen Now
+                  Find Out
                 </Button>
                 <Button 
                   variant="outline" 
                   className="border-[#ff6b3d] text-[#ff6b3d] hover:bg-[#ff6b3d] hover:text-white w-full sm:w-auto"
-                  onClick={() => router.push('/kon-hai-tu')}
+                  onClick={() => window.open('https://studiox.vip', '_blank')}
                 >
-                  Merchandise
+                  Studio X
                 </Button>
               </div>
             </div>
@@ -81,7 +78,6 @@ export default function Component() {
                 height="100%"
                 src="https://www.youtube.com/embed/50WmEK3oS6g?si=4Bk52PHMIXiwe77F"
                 title="Ramé Sivano - The Beginning (Official Music Video)"
-                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 className="rounded-lg shadow-lg"

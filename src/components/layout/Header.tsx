@@ -34,11 +34,11 @@ export function Header() {
                 Album
               </Button>
             </Link>
-            <Link href="/kon-hai-tu">
+            <a href="https://studiox.vip" target="_blank" rel="noopener noreferrer">
               <Button variant="ghost" className="px-4 py-2 text-gray-400 hover:text-[#23b9d6]">
-                Shop
+                Studio X
               </Button>
-            </Link>
+            </a>
             <Link href="/tour">
               <Button variant="ghost" className="px-4 py-2 text-gray-400 hover:text-[#23b9d6]">
                 Tour
@@ -137,11 +137,11 @@ export function Header() {
                       Album
                     </Button>
                   </Link>
-                  <Link href="/KonHaiTu" className="block">
+                  <a href="https://studiox.vip" target="_blank" rel="noopener noreferrer" className="block">
                     <Button variant="ghost" className="w-full justify-start px-4 py-2 text-gray-400 hover:text-[#23b9d6] hover:bg-white/5">
-                      Shop
+                      Studio X
                     </Button>
-                  </Link>
+                  </a>
                   <Link href="/tour" className="block">
                     <Button variant="ghost" className="w-full justify-start px-4 py-2 text-gray-400 hover:text-[#23b9d6] hover:bg-white/5">
                       Tour
