@@ -7,6 +7,7 @@ import { Playfair_Display } from 'next/font/google'
 import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
 import Image from 'next/image'
+import { useState } from 'react'
 
 const playfair = Playfair_Display({ 
   subsets: ['latin'],
@@ -14,8 +15,32 @@ const playfair = Playfair_Display({
 })
 
 export default function Component() {
+  const [isFading, setIsFading] = useState(false)
+  const [isStudioXFading, setIsStudioXFading] = useState(false)
+
+  const handleFindOut = () => {
+    setIsFading(true)
+    setTimeout(() => {
+      window.location.href = 'https://konhaitu.com'
+    }, 1000) // Wait for fade animation to complete
+  }
+
+  const handleStudioX = () => {
+    setIsStudioXFading(true)
+    setTimeout(() => {
+      window.location.href = 'https://studiox.vip'
+    }, 1000) // Wait for fade animation to complete
+  }
+
   return (
     <div className={`min-h-screen bg-[#051b2c] relative overflow-hidden ${playfair.className}`}>
+      {/* Fade to black overlay */}
+      <div 
+        className={`fixed inset-0 bg-black z-50 pointer-events-none transition-opacity duration-1000 ${
+          isFading || isStudioXFading ? 'opacity-100' : 'opacity-0'
+        }`}
+      />
+      
       {/* Ambient light effects */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#23b9d6] opacity-20 blur-[100px]" />
@@ -38,14 +63,14 @@ export default function Component() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button 
                   className="bg-[#23b9d6] hover:bg-[#1fa3bd] text-white w-full sm:w-auto"
-                  onClick={() => window.location.href = 'https://konhaitu.com'}
+                  onClick={handleFindOut}
                 >
                   Find Out
                 </Button>
                 <Button 
                   variant="outline" 
                   className="border-[#ff6b3d] text-[#ff6b3d] hover:bg-[#ff6b3d] hover:text-white w-full sm:w-auto"
-                  onClick={() => window.location.href = 'https://studiox.vip'}
+                  onClick={handleStudioX}
                 >
                   Studio X
                 </Button>
