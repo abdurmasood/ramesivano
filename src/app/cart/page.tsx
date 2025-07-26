@@ -6,7 +6,6 @@ import { Playfair_Display } from 'next/font/google'
 import Image from 'next/image'
 import { Header } from "@/components/layout/Header"
 import { useCart } from '@/features/cart'
-import Link from "next/link"
 
 const playfair = Playfair_Display({ 
   subsets: ['latin'],

@@ -1,10 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
-import { useRouter } from 'next/navigation'
-
 export default function KonHaiTuPage() {
-  const router = useRouter()
 
   useEffect(() => {
     // Redirect to studiox.vip
