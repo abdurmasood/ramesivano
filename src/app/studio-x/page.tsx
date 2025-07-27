@@ -12,7 +12,7 @@ export default function StudioX() {
       
       <main>
         {/* Hero Section - Pure Spline Animation */}
-        <div className="h-screen w-full">
+        <div className="h-[calc(100vh-4rem)] w-full">
           <Spline
             scene="https://prod.spline.design/gtiDBwJjr2HuWYwO/scene.splinecode"
             style={{ pointerEvents: 'none' }}
