@@ -72,7 +72,7 @@ export function Header() {
             {/* Mobile menu button - moved to right */}
             <Button 
               variant="ghost" 
-              className="lg:hidden text-gray-400 hover:text-[#23b9d6]"
+              className="lg:hidden text-gray-400 [@media(hover:hover)]:hover:text-[#23b9d6]"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -99,7 +99,7 @@ export function Header() {
                   <Button 
                     variant="ghost" 
                     size="icon"
-                    className="text-gray-400 hover:text-[#23b9d6]"
+                    className="text-gray-400 [@media(hover:hover)]:hover:text-[#23b9d6]"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
