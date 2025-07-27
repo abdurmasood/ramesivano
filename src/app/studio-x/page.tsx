@@ -5,10 +5,26 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SparklesIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState } from 'react';
 
 export default function StudioX() {
+  const [isFading, setIsFading] = useState(false);
+
+  const handleJoin = () => {
+    setIsFading(true);
+    setTimeout(() => {
+      window.location.href = 'https://studiox.vip';
+    }, 1000); // Wait for fade animation to complete
+  };
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#121212' }}>
+      {/* Fade to black overlay */}
+      <div 
+        className={`fixed inset-0 bg-black z-50 pointer-events-none transition-opacity duration-1000 ${
+          isFading ? 'opacity-100' : 'opacity-0'
+        }`}
+      />
+      
       {/* Header with black background overlay */}
       <div className="relative z-20" style={{ backgroundColor: '#121212' }}>
         <Header />
@@ -39,7 +55,7 @@ export default function StudioX() {
             <div className="text-center">
               <Button 
                 variant="outline" 
-                onClick={() => window.open('https://studiox.vip', '_blank')}
+                onClick={handleJoin}
                 className="border-white/20 text-black bg-white hover:bg-gray-100"
               >
                 Join
