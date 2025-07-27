@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import Link from 'next/link'
 import { Poppins } from 'next/font/google'
+import { usePathname } from 'next/navigation'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -12,6 +13,8 @@ const poppins = Poppins({
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const pathname = usePathname()
+  const isStudioX = pathname === '/studio-x'
 
   return (
     <header className="border-b border-white/10">
@@ -38,11 +41,11 @@ export function Header() {
                 The Lore
               </Button>
             </Link>
-            <a href="https://studiox.vip">
+            <Link href="/studio-x">
               <Button variant="ghost" className={`px-4 py-2 text-gray-400 hover:text-[#23b9d6] ${poppins.className}`}>
                 Studio X
               </Button>
-            </a>
+            </Link>
           </nav>
 
           {/* Desktop Icons and Mobile Menu Button */}
@@ -72,7 +75,7 @@ export function Header() {
             {/* Mobile menu button - moved to right */}
             <Button 
               variant="ghost" 
-              className="lg:hidden text-gray-400 hover:text-[#23b9d6]"
+              className="lg:hidden text-gray-400 [@media(hover:hover)]:hover:text-[#23b9d6]"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -92,14 +95,14 @@ export function Header() {
             />
             
             {/* Menu Content */}
-            <div className="relative bg-[#051b2c]/95 border-l border-white/10 h-full w-[280px] ml-auto animate-in slide-in-from-right duration-300">
+            <div className={`relative ${isStudioX ? 'bg-[#121212]/95' : 'bg-[#051b2c]/95'} border-l border-white/10 h-full w-[280px] ml-auto animate-in slide-in-from-right duration-300`}>
               <div className="p-6 space-y-6">
                 {/* Close button */}
                 <div className="flex justify-end">
                   <Button 
                     variant="ghost" 
                     size="icon"
-                    className="text-gray-400 hover:text-[#23b9d6]"
+                    className="text-gray-400 [@media(hover:hover)]:hover:text-[#23b9d6]"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -115,11 +118,11 @@ export function Header() {
                       The Lore
                     </Button>
                   </Link>
-                  <a href="https://studiox.vip" className="block">
+                  <Link href="/studio-x" className="block">
                     <Button variant="ghost" className={`w-full justify-start px-4 py-2 text-gray-400 hover:text-[#23b9d6] hover:bg-white/5 ${poppins.className}`}>
                       Studio X
                     </Button>
-                  </a>
+                  </Link>
                 </nav>
 
                 
