@@ -32,17 +32,17 @@ export function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-1">
             <Link href="/">
-              <Button variant="ghost" className={`px-4 py-2 text-gray-400 hover:text-[#23b9d6] font-light ${poppins.className}`}>
+              <Button variant="ghost" className={`px-4 py-2 text-gray-400 hover:text-[#23b9d6] hover:bg-white/5 font-light ${poppins.className}`}>
                 Home
               </Button>
             </Link>
             <Link href="/lore">
-              <Button variant="ghost" className={`px-4 py-2 text-gray-400 hover:text-[#23b9d6] font-light ${poppins.className}`}>
+              <Button variant="ghost" className={`px-4 py-2 text-gray-400 hover:text-[#23b9d6] hover:bg-white/5 font-light ${poppins.className}`}>
                 The Lore
               </Button>
             </Link>
             <Link href="/studio-x">
-              <Button variant="ghost" className={`px-4 py-2 text-gray-400 hover:text-[#23b9d6] font-light ${poppins.className}`}>
+              <Button variant="ghost" className={`px-4 py-2 text-gray-400 hover:text-[#23b9d6] hover:bg-white/5 font-light ${poppins.className}`}>
                 Studio X
               </Button>
             </Link>
