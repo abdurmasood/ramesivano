@@ -44,14 +44,11 @@ export default function LorePage() {
                     Origins
                   </h2>
                 <p className="text-sm sm:text-base font-extralight">
-                  In the shadows of urban landscapes, where neon lights flicker against concrete walls, 
-                  a sound was born. Ramé Sivano emerged from the collision of two worlds—the ancient 
-                  melodies that echo through generations and the electric pulse of modern expression.
+                  "Kon hai tu?" loosly translating to the words "Who are you?" is a question most people subject themselves to at a certain point during their lives. In a world where individuality is punished and conformity is rewarded, the question becomes a plea for self-discovery. It's fascinating to think that a somewhat trivial question can compel individuals to examine their subjective existence, personal truths, and overarching purpose within reality.
+                  Navigating this complex interplay of internal reflection and external influences, few are able to find an answer.
                 </p>
                 <p className="text-sm sm:text-base font-extralight">
-                  Growing up between cultures, between languages, between the old and the new, 
-                  Ramé found solace in the spaces others couldn&apos;t see. Music became the bridge, 
-                  the translator of unspoken emotions and untold stories.
+                  A project that started as an aim to answer that very question in the context of a single individual has taken a life of its own. 
                 </p>
                 </div>
               </FadeOnly>
@@ -60,17 +57,13 @@ export default function LorePage() {
               <FadeOnly delay={1.0}>
                 <div className="space-y-4 sm:space-y-6">
                   <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#ff6b3d] mb-4">
-                    The Quest
+                    Purpose
                   </h2>
                 <p className="text-sm sm:text-base font-extralight">
-                  &ldquo;Kon Hai Tu&rdquo; began as a question whispered in the dark—who are you? 
-                  But it became something more: a journey through identity, through belonging, 
-                  through the maze of modern existence where everyone is searching for something real.
+                  --
                 </p>
                 <p className="text-sm sm:text-base font-extralight">
-                  Each track in this collection is a fragment of that search, a piece of the puzzle 
-                  that forms when authenticity meets artistry. The album doesn&apos;t provide answers—it 
-                  invites you to ask better questions.
+                  --
                 </p>
                 </div>
               </FadeOnly>
@@ -82,15 +75,10 @@ export default function LorePage() {
                     The Sound
                   </h2>
                 <p className="text-sm sm:text-base font-extralight">
-                  This is music for the spaces between—between sleep and waking, between 
-                  languages, between heartbeats. It&apos;s the soundtrack to late-night conversations 
-                  with yourself, to moments when the city breathes and you finally remember 
-                  how to breathe with it.
+                  --
                 </p>
                 <p className="text-sm sm:text-base font-extralight">
-                  Ramé Sivano&apos;s sound defies easy categorization, drawing from electronic 
-                  soundscapes, indie sensibilities, and global influences to create something 
-                  entirely new. Something entirely human.
+                  --
                 </p>
                 </div>
               </FadeOnly>
@@ -102,7 +90,7 @@ export default function LorePage() {
                 <p className="text-base sm:text-lg text-gray-400 italic font-extralight">
                   &ldquo;In the end, we are all searching for the same thing—
                   <br className="hidden sm:block" />
-                  <span className="block sm:inline">a moment of recognition, a glimpse of home.&rdquo;</span>
+                  <span className="block sm:inline">a moment of recognition, a glimpse of belonging.&rdquo;</span>
                 </p>
                 <p className="text-sm text-gray-500 mt-4">— Ramé Sivano</p>
               </div>
