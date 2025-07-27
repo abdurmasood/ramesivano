@@ -20,13 +20,13 @@ export default function StudioX() {
         </div>
         
         {/* Content Section */}
-        <div className="px-4 py-16 text-white" style={{ backgroundColor: '#121212' }}>
+        <div className="px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16 text-white" style={{ backgroundColor: '#121212' }}>
           <div className="max-w-4xl mx-auto">
-            <p className="text-lg leading-relaxed text-center mb-8">
+            <p className="text-base sm:text-lg md:text-xl leading-relaxed text-center mb-6 sm:mb-8">
               Studio X represents the intersection of technology and artistry. Here, every sound 
               is crafted with precision, every beat engineered to perfection.
             </p>
-            <p className="text-base leading-relaxed text-center opacity-80">
+            <p className="text-sm sm:text-base leading-relaxed text-center opacity-80">
               This digital space embodies the creative process - from the initial spark of 
               inspiration to the final polished track. The particles you see above are not 
               just visual elements; they represent the building blocks of sound itself.
