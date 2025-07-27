@@ -8,7 +8,6 @@ import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
 import { PageTransition, FadeOnly } from "@/components/animations"
 import Image from 'next/image'
-import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 
 const poppins = Poppins({
@@ -17,8 +16,6 @@ const poppins = Poppins({
 })
 
 export default function Component() {
-  const [isFading, setIsFading] = useState(false)
-  const [isStudioXFading, setIsStudioXFading] = useState(false)
   const router = useRouter()
 
   const handleFindOut = () => {
@@ -26,20 +23,11 @@ export default function Component() {
   }
 
   const handleStudioX = () => {
-    setIsStudioXFading(true)
-    setTimeout(() => {
-      window.location.href = 'https://studiox.vip'
-    }, 1000) // Wait for fade animation to complete
+    router.push('/studio-x')
   }
 
   return (
     <PageTransition className="min-h-screen bg-[#051b2c] relative overflow-hidden">
-      {/* Fade to black overlay */}
-      <div 
-        className={`fixed inset-0 bg-black z-50 pointer-events-none transition-opacity duration-1000 ${
-          isStudioXFading ? 'opacity-100' : 'opacity-0'
-        }`}
-      />
       
       {/* Ambient light effects */}
       <FadeOnly delay={0.2} className="absolute inset-0">
