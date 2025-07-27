@@ -1,6 +1,10 @@
+'use client';
+
 import Spline from '@splinetool/react-spline';
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { SparklesIcon } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function StudioX() {
   return (
@@ -26,11 +30,22 @@ export default function StudioX() {
               Studio X represents the intersection of technology and artistry. Here, every sound 
               is crafted with precision, every beat engineered to perfection.
             </p>
-            <p className="text-sm sm:text-base leading-relaxed text-center opacity-80">
+            <p className="text-sm sm:text-base leading-relaxed text-center opacity-80 mb-8">
               This digital space embodies the creative process - from the initial spark of 
               inspiration to the final polished track. The particles you see above are not 
               just visual elements; they represent the building blocks of sound itself.
             </p>
+            
+            <div className="text-center">
+              <Button 
+                variant="outline" 
+                onClick={() => window.open('https://studiox.vip', '_blank')}
+                className="border-white/20 text-black bg-white hover:bg-gray-100"
+              >
+                Join
+                <SparklesIcon className="-me-1 opacity-60" size={16} aria-hidden="true" />
+              </Button>
+            </div>
           </div>
         </div>
       </main>
