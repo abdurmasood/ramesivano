@@ -9,12 +9,6 @@ import {
   ToastTitle,
   ToastViewport,
 } from "@/components/ui/toast"
-import { Playfair_Display } from 'next/font/google'
-
-const playfair = Playfair_Display({ 
-  subsets: ['latin'],
-  weight: ['400', '700'],
-})
 
 export function Toaster() {
   const { toasts } = useToast()
@@ -26,7 +20,7 @@ export function Toaster() {
           <Toast 
             key={id} 
             {...props}
-            className={`${playfair.className} bg-black/40 backdrop-blur-md border-[#23b9d6]/20 text-white`}
+            className="bg-black/40 backdrop-blur-md border-[#23b9d6]/20 text-white"
           >
             <div className="grid gap-1">
               {title && <ToastTitle className="text-white font-bold">{title}</ToastTitle>}
