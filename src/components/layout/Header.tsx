@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import Link from 'next/link'
 import { Poppins } from 'next/font/google'
+import { usePathname } from 'next/navigation'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -12,6 +13,8 @@ const poppins = Poppins({
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const pathname = usePathname()
+  const isStudioX = pathname === '/studio-x'
 
   return (
     <header className="border-b border-white/10">
@@ -92,7 +95,7 @@ export function Header() {
             />
             
             {/* Menu Content */}
-            <div className="relative bg-[#051b2c]/95 border-l border-white/10 h-full w-[280px] ml-auto animate-in slide-in-from-right duration-300">
+            <div className={`relative ${isStudioX ? 'bg-[#121212]/95' : 'bg-[#051b2c]/95'} border-l border-white/10 h-full w-[280px] ml-auto animate-in slide-in-from-right duration-300`}>
               <div className="p-6 space-y-6">
                 {/* Close button */}
                 <div className="flex justify-end">
