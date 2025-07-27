@@ -1,22 +1,23 @@
 # Ramé Sivano - Official Website
 
-A Next.js 15 application showcasing music artist Ramé Sivano, featuring an e-commerce system for merchandise and artist portfolio.
+A Next.js 15 application showcasing music artist Ramé Sivano, featuring artist storytelling, Studio X integration, and portfolio showcase.
 
 ## Features
 
 - **Artist Portfolio**: Showcase of latest releases and music content
-- **E-commerce System**: Merchandise shop with cart functionality
+- **Artist Lore**: Deep storytelling and artistic narrative
+- **Studio X Integration**: Connected to Studio X platform
 - **Responsive Design**: Optimized for all device sizes
 - **Modern UI**: Built with shadcn/ui components and Tailwind CSS
-- **Smooth Animations**: Fade transitions and hover effects
+- **Smooth Animations**: Fade transitions and hover effects with Framer Motion
 
 ## Tech Stack
 
 - **Framework**: Next.js 15.0.3 with App Router
 - **Styling**: Tailwind CSS with custom design system
 - **UI Components**: shadcn/ui (Radix UI primitives)
-- **Typography**: Poppins font from Google Fonts
-- **State Management**: React Context API for cart functionality
+- **Typography**: Playfair Display font from Google Fonts
+- **Animations**: Framer Motion for smooth transitions
 - **Icons**: Lucide React
 - **Package Manager**: pnpm
 
@@ -48,31 +49,28 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ```
 src/
 ├── app/                    # Next.js app router pages
-│   ├── album/             # Album showcase page
-│   ├── cart/              # Shopping cart page
-│   ├── kon-hai-tu/        # Merchandise shop page
-│   └── tour/              # Tour dates page
+│   ├── lore/              # Artist lore and storytelling
+│   └── studio-x/          # Studio X integration page
 ├── components/
+│   ├── animations/        # Framer Motion animation components
 │   ├── layout/            # Header and Footer components
 │   └── ui/                # shadcn/ui components
-└── features/
-    └── cart/              # Cart functionality (context, hooks, types)
+├── hooks/                 # Custom React hooks
+└── lib/                   # Utility functions and fonts
 ```
 
 ## Key Pages
 
 - **Home** (`/`) - Artist introduction and latest release
-- **Album** (`/album`) - Album showcase with responsive images
-- **Shop** (`/kon-hai-tu`) - Merchandise store with 6 products
-- **Cart** (`/cart`) - Shopping cart with session persistence
-- **Tour** (`/tour`) - Tour dates and newsletter signup
+- **Lore** (`/lore`) - Deep storytelling and artistic narrative
+- **Studio X** (`/studio-x`) - Studio X platform integration and connection
 
 ## Design System
 
 - **Primary Blue**: `#23b9d6`
 - **Accent Orange**: `#ff6b3d`
 - **Background**: `#051b2c`
-- **Typography**: Poppins (light weight for melancholic feel)
+- **Typography**: Playfair Display (elegant serif for artistic feel)
 
 ## External Links
 
@@ -85,11 +83,13 @@ src/
 
 ## Development Notes
 
-- Cart state persists in sessionStorage
+- Built with Next.js 15 App Router for modern React patterns
 - All images optimized with Next.js Image component
 - External images configured for Vercel blob storage
 - Responsive design with mobile-first approach
-- Ambient light effects and smooth transitions
+- Framer Motion animations for smooth transitions
+- shadcn/ui components with new-york style
+- Vercel Analytics integrated for performance tracking
 
 ## License
 
