@@ -38,11 +38,11 @@ export function Header() {
                 The Lore
               </Button>
             </Link>
-            <a href="https://studiox.vip">
+            <Link href="/studio-x">
               <Button variant="ghost" className={`px-4 py-2 text-gray-400 hover:text-[#23b9d6] ${poppins.className}`}>
                 Studio X
               </Button>
-            </a>
+            </Link>
           </nav>
 
           {/* Desktop Icons and Mobile Menu Button */}
@@ -115,11 +115,11 @@ export function Header() {
                       The Lore
                     </Button>
                   </Link>
-                  <a href="https://studiox.vip" className="block">
+                  <Link href="/studio-x" className="block">
                     <Button variant="ghost" className={`w-full justify-start px-4 py-2 text-gray-400 hover:text-[#23b9d6] hover:bg-white/5 ${poppins.className}`}>
                       Studio X
                     </Button>
-                  </a>
+                  </Link>
                 </nav>
 
                 
