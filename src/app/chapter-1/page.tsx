@@ -3,11 +3,16 @@
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { PageTransition, FadeOnly } from '@/components/animations'
-import { Poppins } from 'next/font/google'
+import { Poppins, Satisfy } from 'next/font/google'
 
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['200', '300', '400'],
+})
+
+const satisfy = Satisfy({
+  subsets: ['latin'],
+  weight: ['400'],
 })
 
 export default function LorePage() {
@@ -59,7 +64,7 @@ export default function LorePage() {
                     Purpose
                   </h2>
                 <p className="text-sm sm:text-base font-extralight">
-                  The world surrounding "Kon Hai Tu?" was born out of a need to make sense of an environment
+                  The world surrounding "Kon Hai Tu?" was born out of a need to make sense of an environment that was flawed to begin with.
                 </p>
                 <p className="text-sm sm:text-base font-extralight">
                   --
@@ -86,12 +91,12 @@ export default function LorePage() {
             {/* Call to Action */}
             <FadeOnly delay={1.4}>
               <div className="text-center pt-6 sm:pt-8">
-                <p className="text-base sm:text-lg text-gray-400 italic font-extralight">
+                <p className={`text-base sm:text-lg text-gray-400 italic font-extralight ${satisfy.className}`}>
                   &ldquo;In the end, we are all searching for the same thing—
                   <br className="hidden sm:block" />
                   <span className="block sm:inline">a moment of recognition, a glimpse of belonging.&rdquo;</span>
                 </p>
-                <p className="text-sm text-gray-500 mt-4">— Ramé Sivano</p>
+                <p className={`text-sm text-gray-500 mt-4 ${satisfy.className}`}>— Ramé Sivano</p>
               </div>
             </FadeOnly>
           </div>
