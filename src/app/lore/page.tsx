@@ -29,7 +29,7 @@ export default function LorePage() {
             <FadeOnly delay={0.6}>
               <div className="text-center">
                 <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-4">
-                  The Lore
+                  Chapter 1
                 </h1>
                 <div className="w-24 h-1 bg-[#23b9d6] mx-auto"></div>
               </div>
@@ -44,11 +44,11 @@ export default function LorePage() {
                     Origins
                   </h2>
                 <p className="text-sm sm:text-base font-extralight">
-                  "Kon hai tu?" loosly translating to the words "Who are you?" is a question most people subject themselves to at a certain point during their lives. In a world where individuality is punished and conformity is rewarded, the question becomes a plea for self-discovery. It's fascinating to think that a somewhat trivial question can compel individuals to examine their subjective existence, personal truths, and overarching purpose within reality.
-                  Navigating this complex interplay of internal reflection and external influences, few are able to find an answer.
+                  "Kon Hai Tu?" translating to "Who Are You?" is a question most people subject themselves to at a certain point during their lifetime. In a world where individuality is punished and conformity rewarded, the question becomes a plea for self-discovery. It is fascinating to think that a somewhat trivial question can compel individuals to examine their existence, personal truths, and overarching purpose within reality.
+                  Navigating this interplay of internal reflection and external influences, few are able to find an answer.
                 </p>
                 <p className="text-sm sm:text-base font-extralight">
-                  A project that started as an aim to answer that very question in the context of a single individual has taken a life of its own. 
+                  Some text here.
                 </p>
                 </div>
               </FadeOnly>
@@ -60,7 +60,7 @@ export default function LorePage() {
                     Purpose
                   </h2>
                 <p className="text-sm sm:text-base font-extralight">
-                  --
+                  The world surrounding "Kon Hai Tu?" was born out a need to make sense of an environment
                 </p>
                 <p className="text-sm sm:text-base font-extralight">
                   --
@@ -72,10 +72,10 @@ export default function LorePage() {
               <FadeOnly delay={1.2}>
                 <div className="space-y-4 sm:space-y-6">
                   <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#23b9d6] mb-4">
-                    The Sound
+                    Thoughts
                   </h2>
                 <p className="text-sm sm:text-base font-extralight">
-                  --
+                  I am moved to see that a project that started as an aim to answer a modest question in the context of a single individual has taken a life of its own. 
                 </p>
                 <p className="text-sm sm:text-base font-extralight">
                   --

@@ -38,7 +38,7 @@ export function Header() {
             </Link>
             <Link href="/lore">
               <Button variant="ghost" className={`px-4 py-2 text-gray-400 hover:text-[#23b9d6] hover:bg-white/5 font-light ${poppins.className}`}>
-                The Lore
+                Chapter 1
               </Button>
             </Link>
             <Link href="/studio-x">
@@ -115,7 +115,7 @@ export function Header() {
                 <nav className="space-y-2">
                   <Link href="/lore" className="block">
                     <Button variant="ghost" className={`w-full justify-start px-4 py-2 text-gray-400 hover:text-[#23b9d6] hover:bg-white/5 font-light ${poppins.className}`}>
-                      The Lore
+                      Chapter 1
                     </Button>
                   </Link>
                   <Link href="/studio-x" className="block">
