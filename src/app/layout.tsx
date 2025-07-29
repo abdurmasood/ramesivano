@@ -3,6 +3,7 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/toaster"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { DynamicBackground } from "@/components/layout/DynamicBackground"
 
 
 export const metadata: Metadata = {
@@ -17,12 +18,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-[#051b2c]">
+      <DynamicBackground>
         {children}
         <Toaster />
         <Analytics />
         <SpeedInsights />
-      </body>
+      </DynamicBackground>
     </html>
   )
 }
