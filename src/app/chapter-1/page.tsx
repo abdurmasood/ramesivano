@@ -28,10 +28,12 @@ export default function LorePage() {
             {/* Title */}
             <FadeOnly delay={0.6}>
               <div className="text-center">
-                <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-4">
+                <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-2">
                   Chapter 1
                 </h1>
-                <div className="w-24 h-1 bg-[#23b9d6] mx-auto"></div>
+                <p className="text-lg sm:text-xl md:text-2xl font-light text-gray-400 italic">
+                  Kon Hai Tu?
+                </p>
               </div>
             </FadeOnly>
 
