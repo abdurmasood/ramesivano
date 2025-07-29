@@ -19,7 +19,7 @@ export default function Component() {
   const router = useRouter()
 
   const handleFindOut = () => {
-    router.push('/lore')
+    router.push('/chapter-1')
   }
 
   const handleStudioX = () => {
