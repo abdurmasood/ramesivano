@@ -51,8 +51,11 @@ export default function LorePage() {
                     Origins
                   </h2>
                 <p className="text-sm sm:text-base font-extralight">
-                  "Kon Hai Tu?" translating to "Who Are You?" is a question most people subject themselves to at a certain point during their lifetime. In a world where individuality is punished and conformity rewarded, the question becomes a plea for self-discovery. It is fascinating to think that a somewhat trivial question can compel individuals to examine their existence, personal truths, and overarching purpose within reality.
+                  &ldquo;Kon Hai Tu?&rdquo; translating to &ldquo;Who Are You?&rdquo; is a question most people subject themselves to at a certain point during their lifetime. In a world where individuality is punished and conformity rewarded, the question becomes a plea for self-discovery. It is fascinating to think that a somewhat trivial question can compel individuals to examine their existence, personal truths, and overarching purpose within reality.
                   Navigating this interplay of internal reflection and external influences, few are able to find an answer.
+                </p>
+                <p className="text-sm sm:text-base font-extralight">
+                  The world surrounding &ldquo;Kon Hai Tu?&rdquo; was born out of a need to make sense of circumstances that was flawed to begin with.
                 </p>
                 </div>
               </FadeOnly>
@@ -61,10 +64,11 @@ export default function LorePage() {
               <FadeOnly delay={1.0}>
                 <div className="space-y-4 sm:space-y-6">
                   <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#ff6b3d] mb-4">
-                    Purpose
+                    Concept
                   </h2>
                 <p className="text-sm sm:text-base font-extralight">
-                  The world surrounding "Kon Hai Tu?" was born out of a need to make sense of an environment that was flawed to begin with.
+                  The world starts with a premise that an individual is unsure about their identity. Looking into a mirror, they see a reflection that is a version of them in an alternate reality.
+                  Someone they could have been. Someone they could still be.
                 </p>
                 <p className="text-sm sm:text-base font-extralight">
                   --
