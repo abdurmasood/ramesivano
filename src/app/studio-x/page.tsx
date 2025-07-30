@@ -1,6 +1,7 @@
 'use client';
 
-import Spline from '@splinetool/react-spline';
+import { Canvas } from '@react-three/fiber';
+import ParticleSystem from '@/components/studiox/particle-system';
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SparklesIcon } from "lucide-react";
@@ -31,12 +32,21 @@ export default function StudioX() {
       </div>
       
       <main>
-        {/* Hero Section - Pure Spline Animation */}
-        <div className="h-[calc(100vh-4rem)] w-full">
-          <Spline
-            scene="https://prod.spline.design/gtiDBwJjr2HuWYwO/scene.splinecode"
-            style={{ pointerEvents: 'none' }}
-          />
+        {/* Hero Section - Particle System */}
+        <div className="h-[calc(100vh-4rem)] w-full relative">
+          <Canvas
+            camera={{ position: [0, 0, 5], fov: 75 }}
+            style={{ background: '#121212' }}
+          >
+            <ParticleSystem />
+          </Canvas>
+          
+          {/* Studio X Text Overlay */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-normal text-white font-urbanist tracking-wider">
+              Studio X
+            </h1>
+          </div>
         </div>
         
         {/* Content Section */}
