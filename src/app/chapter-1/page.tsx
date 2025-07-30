@@ -79,11 +79,8 @@ export default function LorePage() {
                     Concept
                   </h2>
                 <p className="text-sm sm:text-base font-extralight">
-                  The story starts with an individual, unsure about their identity. Looking into a broken mirror, they see a reflections that are a version of them in an alternate reality.
-                  Someone they could have been. These reflections are 
-                </p>
-                <p className="text-sm sm:text-base font-extralight">
-                  --
+                  The story starts with an individual, unsure about their identity. Looking into a broken mirror, they see reflections that are versions of them in an alternate reality.
+                  Someone they could have been. Each reflection represents a different personality shaped by choices they made in that universe.
                 </p>
                 </div>
               </FadeOnly>
