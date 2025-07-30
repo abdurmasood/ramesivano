@@ -22,7 +22,7 @@ const songs = [
     id: 1, 
     title: 'Stay With Me', 
     released: true,
-    personalityType: 'The Romantic',
+    personalityType: 'The Executive',
     description: 'Individuals who seek deep emotional connections and believe in the transformative power of love. They are idealistic, passionate, and often wear their hearts on their sleeves.'
   },
   { id: 2, title: 'Na Ja', released: false },
