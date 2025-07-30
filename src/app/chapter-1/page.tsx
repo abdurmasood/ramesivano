@@ -1,10 +1,11 @@
 'use client'
 
+import { useState } from 'react'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { PageTransition, FadeOnly } from '@/components/animations'
 import { Poppins, Satisfy } from 'next/font/google'
-import { Lock, Unlock } from 'lucide-react'
+import { Lock, Unlock, ChevronDown } from 'lucide-react'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -17,7 +18,13 @@ const satisfy = Satisfy({
 })
 
 const songs = [
-  { id: 1, title: 'Stay With Me', released: true },
+  { 
+    id: 1, 
+    title: 'Stay With Me', 
+    released: true,
+    personalityType: 'The Romantic',
+    description: 'Individuals who seek deep emotional connections and believe in the transformative power of love. They are idealistic, passionate, and often wear their hearts on their sleeves.'
+  },
   { id: 2, title: 'Na Ja', released: false },
   { id: 3, title: 'Fitoor', released: false },
   { id: 4, title: 'Intazaar', released: false },
@@ -29,6 +36,13 @@ const songs = [
 ]
 
 export default function LorePage() {
+  const [expandedSong, setExpandedSong] = useState<number | null>(null)
+
+  const toggleSong = (songId: number, isReleased: boolean) => {
+    if (!isReleased) return
+    setExpandedSong(expandedSong === songId ? null : songId)
+  }
+
   return (
     <PageTransition className="min-h-screen bg-[#051b2c] relative overflow-hidden">
       {/* Ambient light effects */}
@@ -148,33 +162,54 @@ export default function LorePage() {
                   {songs.map((song, index) => (
                     <FadeOnly key={song.id} delay={1.8 + index * 0.05}>
                       <div 
-                        className={`group relative px-4 py-2 rounded border transition-all duration-300 ${
+                        className={`group relative rounded border transition-all duration-300 ${
                           song.released 
-                            ? 'bg-white/5 border-[#23b9d6]/30 hover:bg-[#23b9d6]/10' 
-                            : 'bg-black/10 border-gray-700/30 hover:bg-black/20'
+                            ? 'bg-white/5 border-[#23b9d6]/30 hover:bg-[#23b9d6]/10 cursor-pointer' 
+                            : 'bg-black/10 border-gray-700/30'
                         }`}
+                        onClick={() => toggleSong(song.id, song.released)}
                       >
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-3">
-                            <span className="text-xs text-gray-600 w-4 text-center">
-                              {song.id}
-                            </span>
-                            <p className={`text-sm font-medium ${
-                              song.released ? 'text-white' : 'text-gray-500'
-                            }`}>
-                              {song.title}
-                            </p>
-                          </div>
-                          <div className={`flex-shrink-0 transition-colors duration-300 ${
-                            song.released ? 'text-[#23b9d6]' : 'text-gray-600'
-                          }`}>
-                            {song.released ? (
-                              <Unlock className="w-3 h-3" />
-                            ) : (
-                              <Lock className="w-3 h-3" />
-                            )}
+                        <div className="px-4 py-2">
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-3">
+                              <span className="text-xs text-gray-600 w-4 text-center">
+                                {song.id}
+                              </span>
+                              <p className={`text-sm font-medium ${
+                                song.released ? 'text-white' : 'text-gray-500'
+                              }`}>
+                                {song.title}
+                              </p>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              {song.released && song.personalityType && (
+                                <div className={`transition-transform duration-200 ${
+                                  expandedSong === song.id ? 'rotate-180' : ''
+                                }`}>
+                                  <ChevronDown className="w-3 h-3 text-[#23b9d6]" />
+                                </div>
+                              )}
+                              <div className={`flex-shrink-0 transition-colors duration-300 ${
+                                song.released ? 'text-[#23b9d6]' : 'text-gray-600'
+                              }`}>
+                                {song.released ? (
+                                  <Unlock className="w-3 h-3" />
+                                ) : (
+                                  <Lock className="w-3 h-3" />
+                                )}
+                              </div>
+                            </div>
                           </div>
                         </div>
+                        
+                        {/* Expandable personality type section */}
+                        {song.released && song.personalityType && expandedSong === song.id && (
+                          <div className="border-t border-[#23b9d6]/20 px-4 py-3 bg-[#23b9d6]/5">
+                            <p className="text-gray-500 text-xs font-light">
+                              Personality: <span className="text-gray-400">{song.personalityType}</span>
+                            </p>
+                          </div>
+                        )}
                       </div>
                     </FadeOnly>
                   ))}
