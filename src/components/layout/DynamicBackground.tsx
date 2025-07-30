@@ -14,7 +14,7 @@ export function DynamicBackground({ children }: DynamicBackgroundProps) {
     const body = document.body
     
     if (pathname === '/studio-x') {
-      body.style.backgroundColor = '#121212'
+      body.style.backgroundColor = '#000000'
     } else {
       body.style.backgroundColor = '#051b2c'
     }

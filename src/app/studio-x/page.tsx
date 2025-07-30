@@ -18,7 +18,7 @@ export default function StudioX() {
     }, 1000); // Wait for fade animation to complete
   };
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#121212' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#000000' }}>
       {/* Fade to black overlay */}
       <div 
         className={`fixed inset-0 bg-black z-50 pointer-events-none transition-opacity duration-1000 ${
@@ -27,7 +27,7 @@ export default function StudioX() {
       />
       
       {/* Header with black background overlay */}
-      <div className="relative z-20" style={{ backgroundColor: '#121212' }}>
+      <div className="relative z-20" style={{ backgroundColor: '#000000' }}>
         <Header />
       </div>
       
@@ -36,7 +36,7 @@ export default function StudioX() {
         <div className="h-[calc(100vh-4rem)] w-full relative">
           <Canvas
             camera={{ position: [0, 0, 5], fov: 75 }}
-            style={{ background: '#121212' }}
+            style={{ background: '#000000' }}
           >
             <ParticleSystem />
           </Canvas>
@@ -50,7 +50,7 @@ export default function StudioX() {
         </div>
         
         {/* Content Section */}
-        <div className="px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16 text-white" style={{ backgroundColor: '#121212' }}>
+        <div className="px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16 text-white" style={{ backgroundColor: '#000000' }}>
           <div className="max-w-4xl mx-auto">
             <p className="text-base sm:text-lg md:text-xl leading-relaxed text-center mb-6 sm:mb-8">
               Studio X represents the intersection of technology and artistry. Here, every sound 
@@ -77,7 +77,7 @@ export default function StudioX() {
       </main>
       
       {/* Footer with black background */}
-      <div style={{ backgroundColor: '#121212' }}>
+      <div style={{ backgroundColor: '#000000' }}>
         <Footer />
       </div>
     </div>

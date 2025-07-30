@@ -23,7 +23,6 @@ const songs = [
     title: 'Stay With Me', 
     released: true,
     personalityType: 'The Executive',
-    description: 'Individuals who seek deep emotional connections and believe in the transformative power of love. They are idealistic, passionate, and often wear their hearts on their sleeves.'
   },
   { id: 2, title: 'Na Ja', released: false },
   { id: 3, title: 'Fitoor', released: false },
