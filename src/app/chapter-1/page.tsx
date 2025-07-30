@@ -116,6 +116,31 @@ export default function LorePage() {
               </div>
             </FadeOnly>
 
+            {/* Website Redirect */}
+            <FadeOnly delay={1.5}>
+              <div className="text-center pt-6 sm:pt-8">
+                <a 
+                  href="https://konhaitu.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="group relative inline-flex items-center gap-3 px-6 py-3 rounded-full border border-gray-600/40 bg-white/5 backdrop-blur-sm hover:bg-[#23b9d6]/10 hover:border-[#23b9d6]/50 transition-all duration-500 overflow-hidden"
+                >
+                  {/* Subtle glow effect */}
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#23b9d6]/0 via-[#23b9d6]/5 to-[#ff6b3d]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  <span className="relative text-gray-300 group-hover:text-white text-sm font-light tracking-wide transition-colors duration-300">
+                    visit website
+                  </span>
+                  <span className="relative text-gray-400 group-hover:text-[#23b9d6] transform group-hover:translate-x-1 group-hover:scale-110 transition-all duration-300">
+                    →
+                  </span>
+                  
+                  {/* Animated border */}
+                  <div className="absolute inset-0 rounded-full border border-[#23b9d6]/0 group-hover:border-[#23b9d6]/30 transition-all duration-500" />
+                </a>
+              </div>
+            </FadeOnly>
+
             {/* Songs Status Section */}
             <FadeOnly delay={1.6}>
               <div className="pt-8 sm:pt-10">
