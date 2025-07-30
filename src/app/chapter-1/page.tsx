@@ -4,6 +4,7 @@ import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { PageTransition, FadeOnly } from '@/components/animations'
 import { Poppins, Satisfy } from 'next/font/google'
+import { Lock, Unlock } from 'lucide-react'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -14,6 +15,18 @@ const satisfy = Satisfy({
   subsets: ['latin'],
   weight: ['400'],
 })
+
+const songs = [
+  { id: 1, title: 'Stay With Me', released: true },
+  { id: 2, title: 'Na Ja', released: false },
+  { id: 3, title: 'Fitoor', released: false },
+  { id: 4, title: 'Intazaar', released: false },
+  { id: 5, title: 'Khamoshiyan', released: false },
+  { id: 6, title: 'A.M. [interlude]', released: false },
+  { id: 7, title: 'Kon Hai Tu?', released: false },
+  { id: 8, title: 'Faasle', released: false },
+  { id: 9, title: 'Heaven Calls', released: false }
+]
 
 export default function LorePage() {
   return (
@@ -102,10 +115,79 @@ export default function LorePage() {
                 <p className={`text-sm text-gray-500 mt-4 ${satisfy.className}`}>— Ramé Sivano</p>
               </div>
             </FadeOnly>
+
+            {/* Website Redirect */}
+            <FadeOnly delay={1.5}>
+              <div className="text-center pt-6 sm:pt-8">
+                <a 
+                  href="https://konhaitu.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="group relative inline-flex items-center gap-3 px-6 py-3 rounded-full border border-gray-600/40 bg-white/5 backdrop-blur-sm hover:bg-[#23b9d6]/10 hover:border-[#23b9d6]/50 transition-all duration-500 overflow-hidden"
+                >
+                  {/* Subtle glow effect */}
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#23b9d6]/0 via-[#23b9d6]/5 to-[#ff6b3d]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  <span className="relative text-gray-300 group-hover:text-white text-sm font-light tracking-wide transition-colors duration-300">
+                    visit website
+                  </span>
+                  <span className="relative text-gray-400 group-hover:text-[#23b9d6] transform group-hover:translate-x-1 group-hover:scale-110 transition-all duration-300">
+                    →
+                  </span>
+                  
+                  {/* Animated border */}
+                  <div className="absolute inset-0 rounded-full border border-[#23b9d6]/0 group-hover:border-[#23b9d6]/30 transition-all duration-500" />
+                </a>
+              </div>
+            </FadeOnly>
+
+            {/* Songs Status Section */}
+            <FadeOnly delay={1.6}>
+              <div className="pt-8 sm:pt-10">
+                <h3 className="text-xl sm:text-2xl font-light text-white mb-4 text-center">
+                  Tracklist
+                </h3>
+                <div className="max-w-2xl mx-auto space-y-2">
+                  {songs.map((song, index) => (
+                    <FadeOnly key={song.id} delay={1.8 + index * 0.05}>
+                      <div 
+                        className={`group relative px-4 py-2 rounded border transition-all duration-300 ${
+                          song.released 
+                            ? 'bg-white/5 border-[#23b9d6]/30 hover:bg-[#23b9d6]/10' 
+                            : 'bg-black/10 border-gray-700/30 hover:bg-black/20'
+                        }`}
+                      >
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-3">
+                            <span className="text-xs text-gray-600 w-4 text-center">
+                              {song.id}
+                            </span>
+                            <p className={`text-sm font-medium ${
+                              song.released ? 'text-white' : 'text-gray-500'
+                            }`}>
+                              {song.title}
+                            </p>
+                          </div>
+                          <div className={`flex-shrink-0 transition-colors duration-300 ${
+                            song.released ? 'text-[#23b9d6]' : 'text-gray-600'
+                          }`}>
+                            {song.released ? (
+                              <Unlock className="w-3 h-3" />
+                            ) : (
+                              <Lock className="w-3 h-3" />
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </FadeOnly>
+                  ))}
+                </div>
+              </div>
+            </FadeOnly>
           </div>
         </main>
         
-        <FadeOnly delay={1.6}>
+        <FadeOnly delay={2.5}>
           <Footer />
         </FadeOnly>
       </div>
