@@ -4,6 +4,7 @@ import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { PageTransition, FadeOnly } from '@/components/animations'
 import { Poppins, Satisfy } from 'next/font/google'
+import { Lock, Unlock } from 'lucide-react'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -14,6 +15,18 @@ const satisfy = Satisfy({
   subsets: ['latin'],
   weight: ['400'],
 })
+
+const songs = [
+  { id: 1, title: 'Stay With Me', released: true },
+  { id: 2, title: 'Na Ja', released: false },
+  { id: 3, title: 'Fitoor', released: false },
+  { id: 4, title: 'Intazaar', released: false },
+  { id: 5, title: 'Khamoshiyan', released: false },
+  { id: 6, title: 'A.M. [interlude]', released: false },
+  { id: 7, title: 'Kon Hai Tu?', released: false },
+  { id: 8, title: 'Faasle', released: false },
+  { id: 9, title: 'Heaven Calls', released: false }
+]
 
 export default function LorePage() {
   return (
@@ -102,10 +115,59 @@ export default function LorePage() {
                 <p className={`text-sm text-gray-500 mt-4 ${satisfy.className}`}>— Ramé Sivano</p>
               </div>
             </FadeOnly>
+
+            {/* Songs Status Section */}
+            <FadeOnly delay={1.6}>
+              <div className="pt-12 sm:pt-16">
+                <h3 className="text-2xl sm:text-3xl font-light text-white mb-8 text-center">
+                  Tracklist
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 max-w-5xl mx-auto">
+                  {songs.map((song, index) => (
+                    <FadeOnly key={song.id} delay={1.8 + index * 0.1}>
+                      <div 
+                        className={`group relative p-4 rounded-lg border transition-all duration-300 ${
+                          song.released 
+                            ? 'bg-white/5 border-[#23b9d6]/30 hover:bg-[#23b9d6]/10 hover:border-[#23b9d6]/50' 
+                            : 'bg-black/20 border-gray-700/50 hover:bg-black/30'
+                        }`}
+                      >
+                        <div className="flex items-center justify-between">
+                          <div className="flex-1 min-w-0">
+                            <p className={`text-sm font-medium truncate ${
+                              song.released ? 'text-white' : 'text-gray-500'
+                            }`}>
+                              {song.title}
+                            </p>
+                            <p className="text-xs text-gray-600 mt-1">
+                              Track {song.id}
+                            </p>
+                          </div>
+                          <div className={`ml-3 flex-shrink-0 transition-colors duration-300 ${
+                            song.released ? 'text-[#23b9d6]' : 'text-gray-600'
+                          }`}>
+                            {song.released ? (
+                              <Unlock className="w-4 h-4" />
+                            ) : (
+                              <Lock className="w-4 h-4" />
+                            )}
+                          </div>
+                        </div>
+                        
+                        {/* Subtle glow effect for released songs */}
+                        {song.released && (
+                          <div className="absolute inset-0 rounded-lg bg-[#23b9d6]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                        )}
+                      </div>
+                    </FadeOnly>
+                  ))}
+                </div>
+              </div>
+            </FadeOnly>
           </div>
         </main>
         
-        <FadeOnly delay={1.6}>
+        <FadeOnly delay={2.5}>
           <Footer />
         </FadeOnly>
       </div>
