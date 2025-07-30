@@ -118,46 +118,41 @@ export default function LorePage() {
 
             {/* Songs Status Section */}
             <FadeOnly delay={1.6}>
-              <div className="pt-12 sm:pt-16">
-                <h3 className="text-2xl sm:text-3xl font-light text-white mb-8 text-center">
+              <div className="pt-8 sm:pt-10">
+                <h3 className="text-xl sm:text-2xl font-light text-white mb-4 text-center">
                   Tracklist
                 </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 max-w-5xl mx-auto">
+                <div className="max-w-2xl mx-auto space-y-2">
                   {songs.map((song, index) => (
-                    <FadeOnly key={song.id} delay={1.8 + index * 0.1}>
+                    <FadeOnly key={song.id} delay={1.8 + index * 0.05}>
                       <div 
-                        className={`group relative p-4 rounded-lg border transition-all duration-300 ${
+                        className={`group relative px-4 py-2 rounded border transition-all duration-300 ${
                           song.released 
-                            ? 'bg-white/5 border-[#23b9d6]/30 hover:bg-[#23b9d6]/10 hover:border-[#23b9d6]/50' 
-                            : 'bg-black/20 border-gray-700/50 hover:bg-black/30'
+                            ? 'bg-white/5 border-[#23b9d6]/30 hover:bg-[#23b9d6]/10' 
+                            : 'bg-black/10 border-gray-700/30 hover:bg-black/20'
                         }`}
                       >
                         <div className="flex items-center justify-between">
-                          <div className="flex-1 min-w-0">
-                            <p className={`text-sm font-medium truncate ${
+                          <div className="flex items-center gap-3">
+                            <span className="text-xs text-gray-600 w-4 text-center">
+                              {song.id}
+                            </span>
+                            <p className={`text-sm font-medium ${
                               song.released ? 'text-white' : 'text-gray-500'
                             }`}>
                               {song.title}
                             </p>
-                            <p className="text-xs text-gray-600 mt-1">
-                              Track {song.id}
-                            </p>
                           </div>
-                          <div className={`ml-3 flex-shrink-0 transition-colors duration-300 ${
+                          <div className={`flex-shrink-0 transition-colors duration-300 ${
                             song.released ? 'text-[#23b9d6]' : 'text-gray-600'
                           }`}>
                             {song.released ? (
-                              <Unlock className="w-4 h-4" />
+                              <Unlock className="w-3 h-3" />
                             ) : (
-                              <Lock className="w-4 h-4" />
+                              <Lock className="w-3 h-3" />
                             )}
                           </div>
                         </div>
-                        
-                        {/* Subtle glow effect for released songs */}
-                        {song.released && (
-                          <div className="absolute inset-0 rounded-lg bg-[#23b9d6]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                        )}
                       </div>
                     </FadeOnly>
                   ))}
