@@ -70,14 +70,13 @@ export default function LorePage() {
 
             {/* Story Content */}
             <div className="grid md:grid-cols-1 gap-8 sm:gap-12 text-gray-300 leading-relaxed">
-              {/* Chapter 1 */}
               <FadeOnly delay={0.8}>
                 <div className="space-y-4 sm:space-y-6">
                   <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#23b9d6] mb-4">
                     Origins
                   </h2>
                 <p className="text-sm sm:text-base font-extralight">
-                  &ldquo;Kon Hai Tu?&rdquo; translating to the words &ldquo;Who Are You?&rdquo; is a question most people subject themselves to at a certain point during their life. 
+                  &ldquo;Kon Hai Tu?&rdquo; loosly translating to &ldquo;Who Are You?&rdquo; is a question most people subject themselves to at a certain point during their life. 
                   In a world where individuality is punished and conformity rewarded, the question becomes a plea for self-discovery. To think that a somewhat trivial question can compel 
                   individuals to examine their existence, personal truths, and overarching purpose within reality. Navigating this interplay of internal reflection and external influences, 
                   few are able to find an answer.
@@ -85,7 +84,6 @@ export default function LorePage() {
                 </div>
               </FadeOnly>
 
-              {/* Chapter 2 */}
               <FadeOnly delay={1.0}>
                 <div className="space-y-4 sm:space-y-6">
                   <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#ff6b3d] mb-4">
@@ -98,7 +96,6 @@ export default function LorePage() {
                 </div>
               </FadeOnly>
 
-              {/* Chapter 3 */}
               <FadeOnly delay={1.2}>
                 <div className="space-y-4 sm:space-y-6">
                   <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#23b9d6] mb-4">
