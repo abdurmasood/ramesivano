@@ -76,10 +76,12 @@ export default function LorePage() {
                     Origins
                   </h2>
                 <p className="text-sm sm:text-base font-extralight">
-                  &ldquo;Kon Hai Tu?&rdquo; loosly translating to &ldquo;Who Are You?&rdquo; is a question most people subject themselves to at a certain point during their life. 
-                  In a world where individuality is punished and conformity rewarded, the question becomes a plea for self-discovery. To think that a somewhat trivial question can compel 
-                  individuals to examine their existence, personal truths, and overarching purpose within reality. Navigating this interplay of internal reflection and external influences, 
+                  &ldquo;Kon Hai Tu?&rdquo; loosly translating to &ldquo;Who Are You?&rdquo; is a question most people subject themselves to at some point during their life. 
+                  In a world where individuality is punished and conformity rewarded, the question becomes a plea for self-discovery. Navigating this interplay of internal conflict, 
                   few are able to find an answer.
+                </p>
+                <p className="text-sm sm:text-base font-extralight">
+                  This project originated from a need to understand...
                 </p>
                 </div>
               </FadeOnly>
@@ -90,8 +92,9 @@ export default function LorePage() {
                     Concept
                   </h2>
                 <p className="text-sm sm:text-base font-extralight">
-                  The story starts with an individual, unsure about their identity. Looking into a broken mirror, they see reflections that are versions of them in an alternate reality.
-                  Someone they could have been. Each reflection represents a different personality shaped by choices they made in that universe.
+                  The story begins with an individual, unsure of their identity. Looking into shards from a broken mirror, they see reflections that appear to be versions of themselves 
+                  from alternate realities, each representing a different personality shaped by choices they made in that universe. Kon Hai Tu? is about grappling with the idea of 
+                  understanding what personality they have become as a result of their choices in this one.
                 </p>
                 </div>
               </FadeOnly>
@@ -136,7 +139,7 @@ export default function LorePage() {
                   <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#23b9d6]/0 via-[#23b9d6]/5 to-[#ff6b3d]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   
                   <span className="relative text-gray-300 group-hover:text-white text-sm font-light tracking-wide transition-colors duration-300">
-                    visit website
+                    Personalities
                   </span>
                   <span className="relative text-gray-400 group-hover:text-[#23b9d6] transform group-hover:translate-x-1 group-hover:scale-110 transition-all duration-300">
                     →
