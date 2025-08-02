@@ -108,19 +108,13 @@ export default function Component() {
               </div>
             </FadeOnly>
 
-            {/* Chapter Title Section */}
+            {/* Chapter Title & Action Buttons - Compact */}
             <FadeOnly delay={1.0}>
-              <div className="text-center py-6 border-b border-white/10">
-                <p className={`text-xl text-[#23b9d6] font-light ${poppins.className}`}>
+              <div className="text-center py-0">
+                <p className={`text-lg text-[#23b9d6] font-light mb-4 ${poppins.className}`}>
                   Chapter 1: Kon Hai Tu?
                 </p>
-              </div>
-            </FadeOnly>
-
-            {/* Action Buttons Section */}
-            <FadeOnly delay={1.2}>
-              <div className="text-center pt-6">
-                <div className="flex flex-col gap-3 px-8">
+                <div className="flex flex-col gap-2 px-8">
                   <Button 
                     className={`bg-[#23b9d6] hover:bg-[#1fa3bd] text-white ${poppins.className}`}
                     onClick={handleFindOut}
