@@ -108,33 +108,34 @@ export default function Component() {
               </div>
             </FadeOnly>
 
-            {/* Compact Artist Section */}
+            {/* Chapter Title Section */}
             <FadeOnly delay={1.0}>
-              <main className="text-center space-y-4">
-              {/* Artist Info */}
-              <div className="space-y-3">
-                <p className={`text-lg text-[#23b9d6] font-light ${poppins.className}`}>
+              <div className="text-center py-6 border-b border-white/10">
+                <p className={`text-xl text-[#23b9d6] font-light ${poppins.className}`}>
                   Chapter 1: Kon Hai Tu?
                 </p>
               </div>
+            </FadeOnly>
 
-              {/* Action Buttons */}
-              <div className="flex flex-col gap-2 px-8">
-                <Button 
-                  className={`bg-[#23b9d6] hover:bg-[#1fa3bd] text-white ${poppins.className}`}
-                  onClick={handleFindOut}
-                >
-                  Learn More
-                </Button>
-                <Button 
-                  variant="outline" 
-                  className={`border-[#ff6b3d] text-[#ff6b3d] hover:bg-[#ff6b3d] hover:text-white ${poppins.className}`}
-                  onClick={handleStudioX}
-                >
-                  Studio X
-                </Button>
+            {/* Action Buttons Section */}
+            <FadeOnly delay={1.2}>
+              <div className="text-center pt-6">
+                <div className="flex flex-col gap-3 px-8">
+                  <Button 
+                    className={`bg-[#23b9d6] hover:bg-[#1fa3bd] text-white ${poppins.className}`}
+                    onClick={handleFindOut}
+                  >
+                    Learn More
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    className={`border-[#ff6b3d] text-[#ff6b3d] hover:bg-[#ff6b3d] hover:text-white ${poppins.className}`}
+                    onClick={handleStudioX}
+                  >
+                    Studio X
+                  </Button>
+                </div>
               </div>
-              </main>
             </FadeOnly>
           </div>
           
