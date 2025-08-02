@@ -97,7 +97,22 @@ export default function LorePage() {
                 </div>
               </FadeOnly>
 
+              {/* Personalities Button */}
               <FadeOnly delay={1.2}>
+                <div className="text-center pt-2 sm:pt-3">
+                  <a 
+                    href="https://konhaitu.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-2 px-4 py-2 text-sm font-light text-gray-400 hover:text-[#23b9d6] border-b border-gray-600/30 hover:border-[#23b9d6]/50 transition-all duration-300"
+                  >
+                    <span>Personalities</span>
+                    <span className="transform group-hover:translate-x-0.5 transition-transform duration-300">→</span>
+                  </a>
+                </div>
+              </FadeOnly>
+
+              <FadeOnly delay={1.4}>
                 <div className="space-y-4 sm:space-y-6">
                   <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#23b9d6] mb-4">
                     Thoughts
@@ -111,7 +126,7 @@ export default function LorePage() {
             </div>
 
             {/* Call to Action */}
-            <FadeOnly delay={1.4}>
+            <FadeOnly delay={1.5}>
               <div className="text-center pt-6 sm:pt-8">
                 <p className={`text-base sm:text-lg text-gray-400 italic font-extralight ${satisfy.className}`}>
                   &ldquo;We&rsquo;re all searching for the same thing
@@ -119,31 +134,6 @@ export default function LorePage() {
                   <span className="block sm:inline">a moment of recognition, a glimpse of belonging.&rdquo;</span>
                 </p>
                 <p className={`text-sm text-gray-500 mt-4 ${satisfy.className}`}>— Ramé Sivano</p>
-              </div>
-            </FadeOnly>
-
-            {/* Website Redirect */}
-            <FadeOnly delay={1.5}>
-              <div className="text-center pt-6 sm:pt-8">
-                <a 
-                  href="https://konhaitu.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="group relative inline-flex items-center gap-3 px-6 py-3 rounded-full border border-gray-600/40 bg-white/5 backdrop-blur-sm hover:bg-[#23b9d6]/10 hover:border-[#23b9d6]/50 transition-all duration-500 overflow-hidden"
-                >
-                  {/* Subtle glow effect */}
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#23b9d6]/0 via-[#23b9d6]/5 to-[#ff6b3d]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
-                  <span className="relative text-gray-300 group-hover:text-white text-sm font-light tracking-wide transition-colors duration-300">
-                    Personalities
-                  </span>
-                  <span className="relative text-gray-400 group-hover:text-[#23b9d6] transform group-hover:translate-x-1 group-hover:scale-110 transition-all duration-300">
-                    →
-                  </span>
-                  
-                  {/* Animated border */}
-                  <div className="absolute inset-0 rounded-full border border-[#23b9d6]/0 group-hover:border-[#23b9d6]/30 transition-all duration-500" />
-                </a>
               </div>
             </FadeOnly>
 
