@@ -16,9 +16,10 @@ A Next.js 15 application showcasing music artist Ramé Sivano, featuring artist 
 - **Framework**: Next.js 15.0.3 with App Router
 - **Styling**: Tailwind CSS with custom design system
 - **UI Components**: shadcn/ui (Radix UI primitives)
-- **Typography**: Playfair Display font from Google Fonts
+- **Typography**: Urbanist (layout), Poppins (components) from Google Fonts
 - **Animations**: Framer Motion for smooth transitions
 - **Icons**: Lucide React
+- **3D Graphics**: Three.js with @react-three/fiber for Studio X page
 - **Package Manager**: pnpm
 
 ## Getting Started
@@ -49,20 +50,39 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ```
 src/
 ├── app/                    # Next.js app router pages
-│   ├── lore/              # Artist lore and storytelling
-│   └── studio-x/          # Studio X integration page
+│   ├── chapter-1/         # Artist lore and storytelling page
+│   ├── studio-x/          # Studio X integration page
+│   ├── globals.css        # Global styles and CSS variables
+│   ├── layout.tsx         # Root layout with fonts and providers
+│   └── page.tsx           # Homepage with artist intro and music
 ├── components/
 │   ├── animations/        # Framer Motion animation components
-│   ├── layout/            # Header and Footer components
+│   │   ├── FadeIn.tsx     # Fade + slide animations
+│   │   ├── FadeOnly.tsx   # Simple fade animations with delay
+│   │   ├── PageTransition.tsx # Full page transitions
+│   │   └── index.ts       # Animation exports
+│   ├── layout/            # Layout components
+│   │   ├── DynamicBackground.tsx # Route-based background colors
+│   │   ├── Footer.tsx     # Site footer
+│   │   └── Header.tsx     # Site header with navigation
+│   ├── studiox/           # Studio X specific components
+│   │   └── particle-system.tsx # Three.js particle effects
 │   └── ui/                # shadcn/ui components
+│       ├── button.tsx     # Button component
+│       ├── card.tsx       # Card component
+│       ├── dialog.tsx     # Dialog/modal component
+│       ├── toast.tsx      # Toast notification component
+│       └── toaster.tsx    # Toast provider
 ├── hooks/                 # Custom React hooks
-└── lib/                   # Utility functions and fonts
+│   └── use-toast.ts       # Toast hook for notifications
+└── lib/                   # Utilities and configurations
+    └── utils.ts           # Utility functions (cn, etc.)
 ```
 
 ## Key Pages
 
 - **Home** (`/`) - Artist introduction and latest release
-- **Lore** (`/lore`) - Deep storytelling and artistic narrative
+- **Chapter 1** (`/chapter-1`) - Deep storytelling and artistic narrative
 - **Studio X** (`/studio-x`) - Studio X platform integration and connection
 
 ## Design System
@@ -70,7 +90,7 @@ src/
 - **Primary Blue**: `#23b9d6`
 - **Accent Orange**: `#ff6b3d`
 - **Background**: `#051b2c`
-- **Typography**: Playfair Display (elegant serif for artistic feel)
+- **Typography**: Urbanist (elegant sans-serif for layout), Poppins (modern sans-serif for components)
 
 ## External Links
 

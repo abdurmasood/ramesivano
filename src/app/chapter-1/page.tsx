@@ -73,15 +73,13 @@ export default function LorePage() {
               <FadeOnly delay={0.8}>
                 <div className="space-y-4 sm:space-y-6">
                   <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#23b9d6] mb-4">
-                    Origins
+                    Abstract
                   </h2>
                 <p className="text-sm sm:text-base font-extralight">
                   &ldquo;Kon Hai Tu?&rdquo; loosly translating to &ldquo;Who Are You?&rdquo; is a question most people subject themselves to at some point during their life. 
-                  In a world where individuality is punished and conformity rewarded, the question becomes a plea for self-discovery. Navigating this interplay of internal conflict, 
-                  few are able to find an answer.
-                </p>
-                <p className="text-sm sm:text-base font-extralight">
-                  This project originated from a need to understand...
+                  In a world where individuality is punished and conformity rewarded, the question becomes a plea for self-discovery. It is fascinating that a somewhat trivial question 
+                  can compel individuals to examine their existence, personal truths, and overarching purpose within reality. Navigating this interplay of internal reflection 
+                  and external influences, few are able to find an answer.
                 </p>
                 </div>
               </FadeOnly>
@@ -92,9 +90,9 @@ export default function LorePage() {
                     Concept
                   </h2>
                 <p className="text-sm sm:text-base font-extralight">
-                  The story begins with an individual, unsure of their identity. Looking into shards from a broken mirror, they see reflections that appear to be versions of themselves 
-                  from alternate realities, each representing a different personality shaped by choices they made in that universe. Kon Hai Tu? is about grappling with the idea of 
-                  understanding what personality they have become as a result of their choices in this one.
+                  The story begins with an individual, unsure of who they are anymore. Looking into a broken mirror, they see reflections that appear to be versions of themselves 
+                  from alternate realities, each shard representing a different personality shaped by choices they made in that universe. &ldquo;Kon Hai Tu?&rdquo; is about understanding 
+                  the personality they have become as a result of their choices in this one — a search for identity.
                 </p>
                 </div>
               </FadeOnly>
@@ -105,10 +103,8 @@ export default function LorePage() {
                     Thoughts
                   </h2>
                 <p className="text-sm sm:text-base font-extralight">
-                  I am moved to see that a project that started as an aim to answer a modest question in the context of a single individual has taken a life of its own. 
-                </p>
-                <p className="text-sm sm:text-base font-extralight">
-                  --
+                    I am moved to see how a project that started as an aim to answer a modest question in the context of a single individual has taken a life of its own. I am humbled to have
+                    been a part of this journey, with some increadible people and look forward to the next chapter. Till then:
                 </p>
                 </div>
               </FadeOnly>
@@ -118,7 +114,7 @@ export default function LorePage() {
             <FadeOnly delay={1.4}>
               <div className="text-center pt-6 sm:pt-8">
                 <p className={`text-base sm:text-lg text-gray-400 italic font-extralight ${satisfy.className}`}>
-                  &ldquo;In the end, we are all searching for the same thing—
+                  &ldquo;We&rsquo;re all searching for the same thing
                   <br className="hidden sm:block" />
                   <span className="block sm:inline">a moment of recognition, a glimpse of belonging.&rdquo;</span>
                 </p>
