@@ -21,12 +21,19 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="h-16 flex items-center justify-between">
           {/* Mobile Home Icon */}
-          <div className="lg:hidden flex items-center space-x-4">
-            <Link href="/" className="lg:hidden text-gray-400 hover:text-[#23b9d6]">
+          <div className="lg:hidden">
+            <Link href="/" className="text-gray-400 hover:text-[#23b9d6]">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
               </svg>
             </Link>
+          </div>
+
+          {/* Mobile Centered Artist Name */}
+          <div className="lg:hidden absolute left-1/2 transform -translate-x-1/2">
+            <span className={`text-gray-500 text-sm font-extralight tracking-wide ${poppins.className}`}>
+              Ramé Sivano
+            </span>
           </div>
 
           {/* Desktop Navigation */}

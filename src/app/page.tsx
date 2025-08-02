@@ -42,10 +42,10 @@ export default function Component() {
         
         {/* Mobile Layout - Video First */}
         <div className="md:hidden">
-          <div className="relative max-w-6xl mx-auto px-4 py-8">
+          <div className="relative max-w-6xl mx-auto px-4 py-4">
             {/* Latest Release - Hero on Mobile */}
             <FadeOnly delay={0.6}>
-              <section className="mb-8">
+              <section className="mb-6">
                 <h3 className={`text-2xl font-light text-white mb-4 text-center ${poppins.className}`}>Latest Release</h3>
               <div className="aspect-video w-full">
                 <iframe
@@ -63,7 +63,7 @@ export default function Component() {
 
             {/* Music Streaming Links - Mobile Optimized */}
             <FadeOnly delay={0.8}>
-              <div className="text-center mb-8">
+              <div className="text-center mb-6">
               <p className={`text-gray-400 text-sm mb-4 ${poppins.className}`}>Listen on</p>
               <div className="flex flex-col gap-3">
                 <a 
@@ -110,19 +110,16 @@ export default function Component() {
 
             {/* Compact Artist Section */}
             <FadeOnly delay={1.0}>
-              <main className="text-center space-y-6">
+              <main className="text-center space-y-4">
               {/* Artist Info */}
               <div className="space-y-3">
-                <h2 className={`text-3xl font-light leading-tight text-white ${poppins.className}`}>
-                  Ramé Sivano
-                </h2>
                 <p className={`text-lg text-[#23b9d6] font-light ${poppins.className}`}>
                   Chapter 1: Kon Hai Tu?
                 </p>
               </div>
 
               {/* Action Buttons */}
-              <div className="flex flex-col gap-3 px-8">
+              <div className="flex flex-col gap-2 px-8">
                 <Button 
                   className={`bg-[#23b9d6] hover:bg-[#1fa3bd] text-white ${poppins.className}`}
                   onClick={handleFindOut}
