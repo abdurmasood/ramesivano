@@ -90,7 +90,7 @@ export default function LorePage() {
                     Concept
                   </h2>
                 <p className="text-sm sm:text-base font-extralight">
-                  The story begins with an individual, unsure of who they are anymore. Looking into a broken mirror, they see reflections that appear to be versions of themselves 
+                  The story of &ldquo;Kon Hai Tu?&rdquo; begins with an individual, unsure of who they are. Looking into a broken mirror, they see reflections that appear to be versions of themselves 
                   from alternate realities, each shard representing a different personality shaped by choices they made in that universe. &ldquo;Kon Hai Tu?&rdquo; is about understanding 
                   the personality they have become as a result of their choices in this one — a search for identity.
                 </p>
