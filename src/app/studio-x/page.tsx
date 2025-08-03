@@ -1,7 +1,8 @@
 'use client';
 
 import { Canvas } from '@react-three/fiber';
-import ParticleSystem from '@/components/studiox/particle-system';
+import { OrbitControls } from '@react-three/drei';
+import { Galaxy } from '@/components/studiox/galaxy';
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SparklesIcon } from "lucide-react";
@@ -35,10 +36,33 @@ export default function StudioX() {
         {/* Hero Section - Particle System */}
         <div className="h-[calc(100vh-4rem)] w-full relative">
           <Canvas
-            camera={{ position: [0, 0, 5], fov: 75 }}
+            camera={{
+              position: [0, 3, 6],
+              fov: 75,
+              near: 0.1,
+              far: 1000,
+            }}
             style={{ background: '#000000' }}
           >
-            <ParticleSystem />
+            <OrbitControls
+              enablePan={false}
+              enableZoom={false}
+              enableRotate={false}
+              minDistance={5}
+              maxDistance={50}
+              target={[0, 0, 0]}
+            />
+            <Galaxy
+              count={100000}
+              size={0.01}
+              radius={5}
+              branches={4}
+              spin={1}
+              randomness={0.2}
+              randomnessPower={3}
+              insideColor="#ff6030"
+              outsideColor="#1b3984"
+            />
           </Canvas>
           
           {/* Studio X Text Overlay */}
