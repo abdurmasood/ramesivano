@@ -149,7 +149,7 @@ export default function LorePage() {
                       <div 
                         className={`group relative rounded border transition-all duration-300 ${
                           song.released 
-                            ? 'bg-white/5 border-[#23b9d6]/30 hover:bg-[#23b9d6]/10 cursor-pointer' 
+                            ? 'bg-white/5 border-[#23b9d6]/30 cursor-pointer' 
                             : 'bg-black/10 border-gray-700/30'
                         }`}
                         onClick={() => toggleSong(song.id, song.released)}
@@ -203,7 +203,7 @@ export default function LorePage() {
                                   href="https://konhaitu.com" 
                                   target="_blank" 
                                   rel="noopener noreferrer"
-                                  className="text-gray-600 hover:text-gray-400 text-xs transition-colors duration-200 opacity-60 hover:opacity-100"
+                                  className="text-gray-600 hover:text-gray-400 text-xs transition-all duration-200 opacity-60 hover:opacity-80 px-1 py-0.5 rounded"
                                   onClick={(e) => e.stopPropagation()}
                                 >
                                   Learn more
