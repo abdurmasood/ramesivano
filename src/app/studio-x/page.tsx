@@ -20,7 +20,7 @@ export default function StudioX() {
     }, 1000); // Wait for fade animation to complete
   };
   return (
-    <PageTransition className="min-h-screen bg-black">
+    <PageTransition className="min-h-screen bg-black overflow-y-auto">
       {/* Fade to black overlay */}
       <div 
         className={`fixed inset-0 bg-black z-50 pointer-events-none transition-opacity duration-1000 ${
@@ -38,7 +38,7 @@ export default function StudioX() {
       <main>
         {/* Hero Section - Particle System */}
         <FadeOnly delay={0.6}>
-          <div className="h-[calc(100vh-4rem)] w-full relative">
+          <div className="h-[calc(100vh-4rem)] w-full relative overflow-hidden">
             <Canvas
             camera={{
               position: [4, 2, 6],
@@ -47,6 +47,7 @@ export default function StudioX() {
               far: 1000,
             }}
             className="bg-black"
+            style={{ pointerEvents: 'none' }}
           >
             <OrbitControls
               enablePan={false}
