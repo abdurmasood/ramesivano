@@ -73,13 +73,13 @@ export default function LorePage() {
               <FadeOnly delay={0.8}>
                 <div className="space-y-4 sm:space-y-6">
                   <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#23b9d6] mb-4">
-                    Origins
+                    Abstract
                   </h2>
                 <p className="text-sm sm:text-base font-extralight">
-                  &ldquo;Kon Hai Tu?&rdquo; loosly translating to &ldquo;Who Are You?&rdquo; is a question most people subject themselves to at a certain point during their life. 
-                  In a world where individuality is punished and conformity rewarded, the question becomes a plea for self-discovery. To think that a somewhat trivial question can compel 
-                  individuals to examine their existence, personal truths, and overarching purpose within reality. Navigating this interplay of internal reflection and external influences, 
-                  few are able to find an answer.
+                  &ldquo;Kon Hai Tu?&rdquo; loosly translating to &ldquo;Who Are You?&rdquo; is a question most people subject themselves to at some point during their life. 
+                  In a world where individuality is punished and conformity rewarded, the question becomes a plea for self-discovery. It is fascinating that a somewhat trivial question 
+                  can compel individuals to examine their existence, personal truths, and overarching purpose within reality. Navigating this interplay of internal reflection 
+                  and external influences, few are able to find an answer.
                 </p>
                 </div>
               </FadeOnly>
@@ -90,61 +90,50 @@ export default function LorePage() {
                     Concept
                   </h2>
                 <p className="text-sm sm:text-base font-extralight">
-                  The story starts with an individual, unsure about their identity. Looking into a broken mirror, they see reflections that are versions of them in an alternate reality.
-                  Someone they could have been. Each reflection represents a different personality shaped by choices they made in that universe.
+                  The story of &ldquo;Kon Hai Tu?&rdquo; begins with an individual, unsure of who they are. Looking into a broken mirror, they see reflections that appear to be versions of themselves 
+                  from alternate realities, each shard representing a different personality shaped by choices they made in that universe. &ldquo;Kon Hai Tu?&rdquo; is about understanding 
+                  the personality they have become as a result of their choices in this one — a search for identity.
                 </p>
                 </div>
               </FadeOnly>
 
+              {/* Personalities Button */}
               <FadeOnly delay={1.2}>
+                <div className="text-center pt-2 sm:pt-3">
+                  <a 
+                    href="https://konhaitu.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-2 px-4 py-2 text-sm font-light text-gray-400 hover:text-[#23b9d6] border-b border-gray-600/30 hover:border-[#23b9d6]/50 transition-all duration-300"
+                  >
+                    <span>Personalities</span>
+                    <span className="transform group-hover:translate-x-0.5 transition-transform duration-300">→</span>
+                  </a>
+                </div>
+              </FadeOnly>
+
+              <FadeOnly delay={1.4}>
                 <div className="space-y-4 sm:space-y-6">
                   <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#23b9d6] mb-4">
                     Thoughts
                   </h2>
                 <p className="text-sm sm:text-base font-extralight">
-                  I am moved to see that a project that started as an aim to answer a modest question in the context of a single individual has taken a life of its own. 
-                </p>
-                <p className="text-sm sm:text-base font-extralight">
-                  --
+                    I am moved to see how a project that started as an aim to answer a modest question in the context of a single individual has taken a life of its own. I am humbled to have
+                    been a part of this journey, with some increadible people and look forward to the next chapter. Till then:
                 </p>
                 </div>
               </FadeOnly>
             </div>
 
             {/* Call to Action */}
-            <FadeOnly delay={1.4}>
+            <FadeOnly delay={1.5}>
               <div className="text-center pt-6 sm:pt-8">
                 <p className={`text-base sm:text-lg text-gray-400 italic font-extralight ${satisfy.className}`}>
-                  &ldquo;In the end, we are all searching for the same thing—
+                  &ldquo;We&rsquo;re all searching for the same thing
                   <br className="hidden sm:block" />
                   <span className="block sm:inline">a moment of recognition, a glimpse of belonging.&rdquo;</span>
                 </p>
                 <p className={`text-sm text-gray-500 mt-4 ${satisfy.className}`}>— Ramé Sivano</p>
-              </div>
-            </FadeOnly>
-
-            {/* Website Redirect */}
-            <FadeOnly delay={1.5}>
-              <div className="text-center pt-6 sm:pt-8">
-                <a 
-                  href="https://konhaitu.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="group relative inline-flex items-center gap-3 px-6 py-3 rounded-full border border-gray-600/40 bg-white/5 backdrop-blur-sm hover:bg-[#23b9d6]/10 hover:border-[#23b9d6]/50 transition-all duration-500 overflow-hidden"
-                >
-                  {/* Subtle glow effect */}
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#23b9d6]/0 via-[#23b9d6]/5 to-[#ff6b3d]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
-                  <span className="relative text-gray-300 group-hover:text-white text-sm font-light tracking-wide transition-colors duration-300">
-                    visit website
-                  </span>
-                  <span className="relative text-gray-400 group-hover:text-[#23b9d6] transform group-hover:translate-x-1 group-hover:scale-110 transition-all duration-300">
-                    →
-                  </span>
-                  
-                  {/* Animated border */}
-                  <div className="absolute inset-0 rounded-full border border-[#23b9d6]/0 group-hover:border-[#23b9d6]/30 transition-all duration-500" />
-                </a>
               </div>
             </FadeOnly>
 

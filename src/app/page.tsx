@@ -42,10 +42,10 @@ export default function Component() {
         
         {/* Mobile Layout - Video First */}
         <div className="md:hidden">
-          <div className="relative max-w-6xl mx-auto px-4 py-8">
+          <div className="relative max-w-6xl mx-auto px-4 py-4">
             {/* Latest Release - Hero on Mobile */}
             <FadeOnly delay={0.6}>
-              <section className="mb-8">
+              <section className="mb-6">
                 <h3 className={`text-2xl font-light text-white mb-4 text-center ${poppins.className}`}>Latest Release</h3>
               <div className="aspect-video w-full">
                 <iframe
@@ -63,7 +63,7 @@ export default function Component() {
 
             {/* Music Streaming Links - Mobile Optimized */}
             <FadeOnly delay={0.8}>
-              <div className="text-center mb-8">
+              <div className="text-center mb-6">
               <p className={`text-gray-400 text-sm mb-4 ${poppins.className}`}>Listen on</p>
               <div className="flex flex-col gap-3">
                 <a 
@@ -102,42 +102,34 @@ export default function Component() {
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                   </svg>
-                  <span className={`font-medium ${poppins.className}`}>YouTube</span>
+                  <span className={`font-medium ${poppins.className}`}>YouTube Music</span>
                 </a>
               </div>
               </div>
             </FadeOnly>
 
-            {/* Compact Artist Section */}
+            {/* Chapter Title & Action Buttons - Compact */}
             <FadeOnly delay={1.0}>
-              <main className="text-center space-y-6">
-              {/* Artist Info */}
-              <div className="space-y-3">
-                <h2 className={`text-3xl font-light leading-tight text-white ${poppins.className}`}>
-                  Ramé Sivano
-                </h2>
-                <p className={`text-lg text-[#23b9d6] font-light ${poppins.className}`}>
+              <div className="text-center py-0">
+                <p className={`text-lg text-[#23b9d6] font-light mb-4 ${poppins.className}`}>
                   Chapter 1: Kon Hai Tu?
                 </p>
+                <div className="flex flex-col gap-2 px-8">
+                  <Button 
+                    className={`bg-[#23b9d6] hover:bg-[#1fa3bd] text-white ${poppins.className}`}
+                    onClick={handleFindOut}
+                  >
+                    Learn More
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    className={`border-[#ff6b3d] text-[#ff6b3d] hover:bg-[#ff6b3d] hover:text-white ${poppins.className}`}
+                    onClick={handleStudioX}
+                  >
+                    Studio X
+                  </Button>
+                </div>
               </div>
-
-              {/* Action Buttons */}
-              <div className="flex flex-col gap-3 px-8">
-                <Button 
-                  className={`bg-[#23b9d6] hover:bg-[#1fa3bd] text-white ${poppins.className}`}
-                  onClick={handleFindOut}
-                >
-                  Learn More
-                </Button>
-                <Button 
-                  variant="outline" 
-                  className={`border-[#ff6b3d] text-[#ff6b3d] hover:bg-[#ff6b3d] hover:text-white ${poppins.className}`}
-                  onClick={handleStudioX}
-                >
-                  Studio X
-                </Button>
-              </div>
-              </main>
             </FadeOnly>
           </div>
           
@@ -219,7 +211,7 @@ export default function Component() {
                         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                         </svg>
-                        <span className={`text-sm group-hover:text-[#FF0000] transition-colors ${poppins.className}`}>YouTube</span>
+                        <span className={`text-sm group-hover:text-[#FF0000] transition-colors ${poppins.className}`}>YouTube Music</span>
                       </div>
                     </a>
                   </div>
