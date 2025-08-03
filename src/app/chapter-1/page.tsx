@@ -104,10 +104,10 @@ export default function LorePage() {
                     href="https://konhaitu.com" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-3 px-6 py-2 text-base font-normal text-white bg-[#23b9d6]/80 hover:brightness-105 rounded-lg shadow-md border border-[#23b9d6]/20 hover:border-[#23b9d6]/22 transition-all duration-300"
+                    className="group inline-flex items-center gap-3 px-6 py-2 text-base font-normal text-white bg-[#23b9d6]/80 [@media(hover:hover)]:hover:brightness-105 rounded-lg shadow-md border border-[#23b9d6]/20 [@media(hover:hover)]:hover:border-[#23b9d6]/22 transition-all duration-300 active:scale-95 touch-manipulation select-none"
                   >
                     <span>Discover Your Personality</span>
-                    <span className="transform group-hover:translate-x-1 transition-transform duration-300">→</span>
+                    <span className="transform [@media(hover:hover)]:group-hover:translate-x-1 transition-transform duration-300">→</span>
                   </a>
                   <p className="text-gray-400 text-sm mt-3 font-light">
                     Learn about personalities that inspired this chapter
@@ -206,7 +206,7 @@ export default function LorePage() {
                                   href="https://konhaitu.com" 
                                   target="_blank" 
                                   rel="noopener noreferrer"
-                                  className="text-gray-500 hover:text-gray-300 text-xs transition-all duration-200 opacity-70 hover:opacity-90 px-1 py-0.5 rounded"
+                                  className="text-gray-500 [@media(hover:hover)]:hover:text-gray-300 text-xs transition-all duration-200 opacity-70 [@media(hover:hover)]:hover:opacity-90 px-1 py-0.5 rounded active:scale-95 touch-manipulation select-none"
                                   onClick={(e) => e.stopPropagation()}
                                 >
                                   Learn more
