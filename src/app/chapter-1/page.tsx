@@ -73,7 +73,7 @@ export default function LorePage() {
               <FadeOnly delay={0.8}>
                 <div className="space-y-4 sm:space-y-6">
                   <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#23b9d6] mb-4">
-                    Abstract
+                    Background
                   </h2>
                 <p className="text-sm sm:text-base font-extralight">
                   &ldquo;Kon Hai Tu?&rdquo; loosly translating to &ldquo;Who Are You?&rdquo; is a question most people subject themselves to at some point during their life. 
@@ -149,7 +149,7 @@ export default function LorePage() {
                       <div 
                         className={`group relative rounded border transition-all duration-300 ${
                           song.released 
-                            ? 'bg-white/5 border-[#23b9d6]/30 hover:bg-[#23b9d6]/10 cursor-pointer' 
+                            ? 'bg-white/5 border-[#23b9d6]/30 cursor-pointer' 
                             : 'bg-black/10 border-gray-700/30'
                         }`}
                         onClick={() => toggleSong(song.id, song.released)}
@@ -195,9 +195,20 @@ export default function LorePage() {
                             }`}
                           >
                             <div className="border-t border-[#23b9d6]/20 px-4 py-3 bg-[#23b9d6]/5">
-                              <p className="text-gray-500 text-xs font-light">
-                                Personality: <span className="text-gray-400">{song.personalityType}</span>
-                              </p>
+                              <div className="flex items-center justify-between">
+                                <p className="text-gray-500 text-xs font-light">
+                                  Personality: <span className="text-gray-400">{song.personalityType}</span>
+                                </p>
+                                <a 
+                                  href="https://konhaitu.com" 
+                                  target="_blank" 
+                                  rel="noopener noreferrer"
+                                  className="text-gray-600 hover:text-gray-400 text-xs transition-all duration-200 opacity-60 hover:opacity-80 px-1 py-0.5 rounded"
+                                  onClick={(e) => e.stopPropagation()}
+                                >
+                                  Learn more
+                                </a>
+                              </div>
                             </div>
                           </div>
                         )}
