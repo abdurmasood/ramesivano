@@ -87,10 +87,10 @@ export default function StudioX() {
           <div className="px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16 text-white bg-black">
             <div className="max-w-4xl mx-auto">
               <p className="text-base sm:text-lg md:text-xl leading-relaxed text-center mb-6 sm:mb-8">
-                At Studio X, our focus is crafting stories. We aim to create a community where people feel like they are a part of something that represents them.
+                At Studio X, our focus is telling stories. We aim to create a community where people feel like they are a part of something that represents them.
               </p>
               <p className="text-sm sm:text-base leading-relaxed text-center opacity-80 mb-8">
-                Currenlty our community is invite only. If you're interested in joining, please reach out to us.
+                Currenlty our community is invite only. If you're interested in joining, reach out to us.
               </p>
               
               <div className="text-center">
