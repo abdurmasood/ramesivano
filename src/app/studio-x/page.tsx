@@ -69,6 +69,9 @@ export default function StudioX() {
             />
             </Canvas>
             
+            {/* Dark overlay to dim galaxy */}
+            <div className="absolute inset-0 bg-black/30 pointer-events-none" />
+            
             {/* Studio X Text Overlay */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
               <h1 className="text-6xl md:text-8xl lg:text-9xl font-normal text-white font-urbanist tracking-wider">
