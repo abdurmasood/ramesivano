@@ -76,7 +76,7 @@ export default function LorePage() {
                     Background
                   </h2>
                 <p className="text-sm sm:text-base font-extralight">
-                  &ldquo;Kon Hai Tu?&rdquo; loosly translating to &ldquo;Who Are You?&rdquo; is a question most people subject themselves to at some point during their life. 
+                  &ldquo;Kon Hai Tu?&rdquo; translating to &ldquo;Who Are You?&rdquo; is a question most people subject themselves to at some point during their life. 
                   In a world where individuality is punished and conformity rewarded, the question becomes a plea for self-discovery. It is fascinating that a somewhat trivial question 
                   can compel individuals to examine their existence, personal truths, and overarching purpose within reality. Navigating this interplay of internal reflection 
                   and external influences, few are able to find an answer.
@@ -99,16 +99,19 @@ export default function LorePage() {
 
               {/* Personalities Button */}
               <FadeOnly delay={1.2}>
-                <div className="text-center pt-2 sm:pt-3">
+                <div className="text-center pt-2 sm:pt-2">
                   <a 
                     href="https://konhaitu.com" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-2 px-4 py-2 text-sm font-light text-gray-400 hover:text-[#23b9d6] border-b border-gray-600/30 hover:border-[#23b9d6]/50 transition-all duration-300"
+                    className="group inline-flex items-center gap-3 px-6 py-2 text-base font-normal text-white bg-[#23b9d6]/80 hover:brightness-105 rounded-lg shadow-md border border-[#23b9d6]/20 hover:border-[#23b9d6]/22 transition-all duration-300"
                   >
-                    <span>Personalities</span>
-                    <span className="transform group-hover:translate-x-0.5 transition-transform duration-300">→</span>
+                    <span>Discover Your Personality</span>
+                    <span className="transform group-hover:translate-x-1 transition-transform duration-300">→</span>
                   </a>
+                  <p className="text-gray-400 text-sm mt-3 font-light">
+                    Learn about personalities that inspired this chapter
+                  </p>
                 </div>
               </FadeOnly>
 
@@ -203,7 +206,7 @@ export default function LorePage() {
                                   href="https://konhaitu.com" 
                                   target="_blank" 
                                   rel="noopener noreferrer"
-                                  className="text-gray-600 hover:text-gray-400 text-xs transition-all duration-200 opacity-60 hover:opacity-80 px-1 py-0.5 rounded"
+                                  className="text-gray-500 hover:text-gray-300 text-xs transition-all duration-200 opacity-70 hover:opacity-90 px-1 py-0.5 rounded"
                                   onClick={(e) => e.stopPropagation()}
                                 >
                                   Learn more

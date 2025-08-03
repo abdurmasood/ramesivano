@@ -2,8 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Play } from 'lucide-react'
-import { Poppins } from 'next/font/google'
+import { Poppins, Dancing_Script } from 'next/font/google'
 import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
 import { PageTransition, FadeOnly } from "@/components/animations"
@@ -14,6 +13,12 @@ const poppins = Poppins({
   subsets: ['latin'],
   weight: ['200', '300', '400', '500', '600'],
 })
+
+const dancingScript = Dancing_Script({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+})
+
 
 export default function Component() {
   const router = useRouter()
@@ -111,7 +116,7 @@ export default function Component() {
             {/* Chapter Title & Action Buttons - Compact */}
             <FadeOnly delay={1.0}>
               <div className="text-center py-0">
-                <p className={`text-lg text-[#23b9d6] font-light mb-4 ${poppins.className}`}>
+                <p className={`text-xl text-[#23b9d6] font-light mb-4 ${dancingScript.className}`}>
                   Chapter 1: Kon Hai Tu?
                 </p>
                 <div className="flex flex-col gap-2 px-8">
@@ -144,10 +149,10 @@ export default function Component() {
             <main className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
               <FadeOnly delay={0.6}>
                 <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
-                  <h2 className={`text-4xl sm:text-5xl font-light leading-tight text-white ${poppins.className}`}>
+                  <h2 className={`text-5xl sm:text-6xl font-light leading-tight text-white ${dancingScript.className}`}>
                     Ramé Sivano
                   </h2>
-                <p className={`text-xl sm:text-2xl text-[#23b9d6] font-light ${poppins.className}`}>
+                <p className={`text-2xl sm:text-3xl text-[#23b9d6] font-light ${dancingScript.className}`}>
                   Chapter 1: Kon Hai Tu?
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -220,8 +225,7 @@ export default function Component() {
               </FadeOnly>
 
               <FadeOnly delay={0.8}>
-                <Card className="bg-black/20 backdrop-blur-sm border-0 overflow-hidden relative group mt-8 lg:mt-0">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#23b9d6]/20 to-[#ff6b3d]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <Card className="bg-black/20 backdrop-blur-sm border-0 overflow-hidden relative mt-8 lg:mt-0">
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202024-11-13%20at%2012.35.05_007fabdd.jpg-oonnWn9Y8Qb9BxxtMyjq5Hqm2lWqie.jpeg"
                   alt="Atmospheric portrait of Ramé Sivano in blue and orange lighting"
@@ -229,12 +233,6 @@ export default function Component() {
                   height={600}
                   className="w-full aspect-auto sm:h-[600px] object-contain sm:object-cover"
                 />
-                <Button 
-                  className="absolute bottom-4 right-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white rounded-full p-3"
-                  aria-label="Play featured track"
-                >
-                  <Play className="w-6 h-6" />
-                </Button>
                 </Card>
               </FadeOnly>
             </main>
