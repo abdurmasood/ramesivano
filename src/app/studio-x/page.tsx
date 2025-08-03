@@ -97,7 +97,7 @@ export default function StudioX() {
                 <Button 
                   variant="outline" 
                   onClick={handleJoin}
-                  className="border-white/20 text-black bg-white hover:bg-gray-100"
+                  className="border-white/20 text-black bg-white [@media(hover:hover)]:hover:bg-gray-100 active:scale-95 touch-manipulation select-none"
                 >
                   Access
                   <SparklesIcon className="-me-1 opacity-60" size={16} aria-hidden="true" />
