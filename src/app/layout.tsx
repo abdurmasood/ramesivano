@@ -25,12 +25,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={urbanist.variable}>
-      <DynamicBackground>
-        {children}
-        <Toaster />
-        <Analytics />
-        <SpeedInsights />
-      </DynamicBackground>
+      <body>
+        <DynamicBackground>
+          {children}
+          <Toaster />
+          <Analytics />
+          <SpeedInsights />
+        </DynamicBackground>
+      </body>
     </html>
   )
 }

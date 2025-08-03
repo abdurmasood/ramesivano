@@ -20,7 +20,7 @@ export default function StudioX() {
     }, 1000); // Wait for fade animation to complete
   };
   return (
-    <PageTransition className="min-h-screen" style={{ backgroundColor: '#000000' }}>
+    <PageTransition className="min-h-screen bg-black">
       {/* Fade to black overlay */}
       <div 
         className={`fixed inset-0 bg-black z-50 pointer-events-none transition-opacity duration-1000 ${
@@ -30,7 +30,7 @@ export default function StudioX() {
       
       {/* Header with black background overlay */}
       <FadeOnly delay={0.4}>
-        <div className="relative z-20" style={{ backgroundColor: '#000000' }}>
+        <div className="relative z-20 bg-black">
           <Header />
         </div>
       </FadeOnly>
@@ -46,7 +46,7 @@ export default function StudioX() {
               near: 0.1,
               far: 1000,
             }}
-            style={{ background: '#000000' }}
+            className="bg-black"
           >
             <OrbitControls
               enablePan={false}
@@ -83,7 +83,7 @@ export default function StudioX() {
         
         {/* Content Section */}
         <FadeOnly delay={0.8}>
-          <div className="px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16 text-white" style={{ backgroundColor: '#000000' }}>
+          <div className="px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16 text-white bg-black">
             <div className="max-w-4xl mx-auto">
               <p className="text-base sm:text-lg md:text-xl leading-relaxed text-center mb-6 sm:mb-8">
                 Studio X represents the intersection of technology and artistry. Here, every sound 
@@ -112,7 +112,7 @@ export default function StudioX() {
       
       {/* Footer with black background */}
       <FadeOnly delay={1.0}>
-        <div style={{ backgroundColor: '#000000' }}>
+        <div className="bg-black">
           <Footer />
         </div>
       </FadeOnly>

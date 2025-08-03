@@ -24,9 +24,5 @@ export function DynamicBackground({ children }: DynamicBackgroundProps) {
     }
   }, [pathname])
 
-  return (
-    <body>
-      {children}
-    </body>
-  )
+  return <>{children}</>
 }
