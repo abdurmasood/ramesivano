@@ -76,7 +76,7 @@ export default function LorePage() {
                     Background
                   </h2>
                 <p className="text-sm sm:text-base font-extralight">
-                  &ldquo;Kon Hai Tu?&rdquo; loosly translating to &ldquo;Who Are You?&rdquo; is a question most people subject themselves to at some point during their life. 
+                  &ldquo;Kon Hai Tu?&rdquo; translating to &ldquo;Who Are You?&rdquo; is a question most people subject themselves to at some point during their life. 
                   In a world where individuality is punished and conformity rewarded, the question becomes a plea for self-discovery. It is fascinating that a somewhat trivial question 
                   can compel individuals to examine their existence, personal truths, and overarching purpose within reality. Navigating this interplay of internal reflection 
                   and external influences, few are able to find an answer.

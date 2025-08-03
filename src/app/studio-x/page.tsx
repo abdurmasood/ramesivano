@@ -91,7 +91,7 @@ export default function StudioX() {
                 Our goal is to make people feel a part of a community where they feel valued and heard.
               </p>
               <p className="text-sm sm:text-base leading-relaxed text-center opacity-80 mb-8">
-                Currenlty our community is invite only. If you're interested in joining, please reach out to us at <a href="mailto:hello@studiox.vip" className="text-white hover:text-gray-400">hello@studiox.vip</a>.
+                Currenlty our community is invite only. If you're interested in joining, please reach out to us.
               </p>
               
               <div className="text-center">
