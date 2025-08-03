@@ -90,7 +90,7 @@ export default function StudioX() {
                 At Studio X, our focus is telling stories. We aim to create a community where people feel like they are a part of something that represents them.
               </p>
               <p className="text-sm sm:text-base leading-relaxed text-center opacity-80 mb-8">
-                Currenlty our community is invite only. If you're interested in joining, reach out to us.
+                Currenlty our community is invite only. If you&apos;re interested in joining, reach out to us.
               </p>
               
               <div className="text-center">

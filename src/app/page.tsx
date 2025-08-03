@@ -2,7 +2,6 @@
 
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Play } from 'lucide-react'
 import { Poppins, Dancing_Script } from 'next/font/google'
 import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
