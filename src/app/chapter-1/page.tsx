@@ -195,9 +195,20 @@ export default function LorePage() {
                             }`}
                           >
                             <div className="border-t border-[#23b9d6]/20 px-4 py-3 bg-[#23b9d6]/5">
-                              <p className="text-gray-500 text-xs font-light">
-                                Personality: <span className="text-gray-400">{song.personalityType}</span>
-                              </p>
+                              <div className="flex items-center justify-between">
+                                <p className="text-gray-500 text-xs font-light">
+                                  Personality: <span className="text-gray-400">{song.personalityType}</span>
+                                </p>
+                                <a 
+                                  href="https://konhaitu.com" 
+                                  target="_blank" 
+                                  rel="noopener noreferrer"
+                                  className="text-gray-600 hover:text-gray-400 text-xs transition-colors duration-200 opacity-60 hover:opacity-100"
+                                  onClick={(e) => e.stopPropagation()}
+                                >
+                                  Learn more
+                                </a>
+                              </div>
                             </div>
                           </div>
                         )}
