@@ -73,7 +73,7 @@ export default function LorePage() {
               <FadeOnly delay={0.8}>
                 <div className="space-y-4 sm:space-y-6">
                   <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#23b9d6] mb-4">
-                    Abstract
+                    Background
                   </h2>
                 <p className="text-sm sm:text-base font-extralight">
                   &ldquo;Kon Hai Tu?&rdquo; loosly translating to &ldquo;Who Are You?&rdquo; is a question most people subject themselves to at some point during their life. 
