@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import Link from 'next/link'
 import { Poppins } from 'next/font/google'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -14,7 +14,16 @@ const poppins = Poppins({
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const pathname = usePathname()
+  const router = useRouter()
   const isStudioX = pathname === '/studio-x'
+
+  const handleHomeClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    setIsMobileMenuOpen(false)
+    setTimeout(() => {
+      router.push('/')
+    }, 300) // Wait for sidebar close animation
+  }
 
   return (
     <header className="border-b border-white/10">
@@ -120,6 +129,11 @@ export function Header() {
 
                 {/* Navigation */}
                 <nav className="space-y-2">
+                  <Link href="/" className="block" onClick={handleHomeClick}>
+                    <Button variant="ghost" className={`w-full justify-start px-4 py-2 text-gray-400 hover:text-[#23b9d6] hover:bg-white/5 font-light ${poppins.className}`}>
+                      Home
+                    </Button>
+                  </Link>
                   <Link href="/chapter-1" className="block">
                     <Button variant="ghost" className={`w-full justify-start px-4 py-2 text-gray-400 hover:text-[#23b9d6] hover:bg-white/5 font-light ${poppins.className}`}>
                       Chapter 1
