@@ -37,7 +37,7 @@ export default function StudioX() {
         <div className="h-[calc(100vh-4rem)] w-full relative">
           <Canvas
             camera={{
-              position: [0, 3, 6],
+              position: [4, 2, 6],
               fov: 75,
               near: 0.1,
               far: 1000,
