@@ -91,7 +91,7 @@ export default function LorePage() {
                   </h2>
                 <p className="text-sm sm:text-base font-extralight">
                   The story of &ldquo;Kon Hai Tu?&rdquo; begins with an individual, unsure of who they are. Looking into a broken mirror, they see reflections that appear to be versions of themselves 
-                  from alternate realities, each shard representing a different personality shaped by choices they made in that universe. &ldquo;Kon Hai Tu?&rdquo; is about understanding 
+                  from alternate realities with each cracked shard representing a different personality shaped by choices they made in that universe. &ldquo;Kon Hai Tu?&rdquo; is about understanding 
                   the personality they have become as a result of their choices in this one — a search for identity.
                 </p>
                 </div>
@@ -131,7 +131,7 @@ export default function LorePage() {
                 <p className={`text-base sm:text-lg text-gray-400 italic font-extralight ${satisfy.className}`}>
                   &ldquo;We&rsquo;re all searching for the same thing
                   <br className="hidden sm:block" />
-                  <span className="block sm:inline">a moment of recognition, a glimpse of belonging.&rdquo;</span>
+                  <span className="block sm:inline">a moment of stillness, a mind of peace.&rdquo;</span>
                 </p>
                 <p className={`text-sm text-gray-500 mt-4 ${satisfy.className}`}>— Ramé Sivano</p>
               </div>
