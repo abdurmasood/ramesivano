@@ -226,8 +226,7 @@ export default function Component() {
               </FadeOnly>
 
               <FadeOnly delay={0.8}>
-                <Card className="bg-black/20 backdrop-blur-sm border-0 overflow-hidden relative group mt-8 lg:mt-0">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#23b9d6]/20 to-[#ff6b3d]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <Card className="bg-black/20 backdrop-blur-sm border-0 overflow-hidden relative mt-8 lg:mt-0">
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202024-11-13%20at%2012.35.05_007fabdd.jpg-oonnWn9Y8Qb9BxxtMyjq5Hqm2lWqie.jpeg"
                   alt="Atmospheric portrait of Ramé Sivano in blue and orange lighting"
@@ -235,12 +234,6 @@ export default function Component() {
                   height={600}
                   className="w-full aspect-auto sm:h-[600px] object-contain sm:object-cover"
                 />
-                <Button 
-                  className="absolute bottom-4 right-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white rounded-full p-3"
-                  aria-label="Play featured track"
-                >
-                  <Play className="w-6 h-6" />
-                </Button>
                 </Card>
               </FadeOnly>
             </main>
