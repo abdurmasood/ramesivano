@@ -129,7 +129,7 @@ export default function LorePage() {
             <FadeOnly delay={1.5}>
               <div className="text-center pt-6 sm:pt-8">
                 <p className={`text-base sm:text-lg text-gray-400 italic font-extralight ${satisfy.className}`}>
-                  &ldquo;We&rsquo;re all searching for the same thing
+                  &ldquo;We&rsquo;re all in search of the same thing
                   <br className="hidden sm:block" />
                   <span className="block sm:inline">a moment of stillness, a mind of peace.&rdquo;</span>
                 </p>
