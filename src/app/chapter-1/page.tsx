@@ -205,6 +205,20 @@ export default function LorePage() {
                     </FadeOnly>
                   ))}
                 </div>
+                
+                {/* Legend */}
+                <FadeOnly delay={2.2}>
+                  <div className="flex justify-center gap-6 mt-4 pt-2 text-xs">
+                    <div className="flex items-center gap-2">
+                      <Unlock className="w-3 h-3 text-[#23b9d6]" />
+                      <span className="text-gray-400">Released</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Lock className="w-3 h-3 text-gray-600" />
+                      <span className="text-gray-500">Coming Soon</span>
+                    </div>
+                  </div>
+                </FadeOnly>
               </div>
             </FadeOnly>
           </div>
