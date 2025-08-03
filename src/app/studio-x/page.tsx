@@ -87,13 +87,11 @@ export default function StudioX() {
           <div className="px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16 text-white bg-black">
             <div className="max-w-4xl mx-auto">
               <p className="text-base sm:text-lg md:text-xl leading-relaxed text-center mb-6 sm:mb-8">
-                Studio X represents the intersection of technology and artistry. Here, every sound 
-                is crafted with precision, every beat engineered to perfection.
+                At Studio X, our focus is on telling stories. Asia has been an untapped market for stories for decades.
+                Our goal is to make people feel a part of a community where they feel valued and heard.
               </p>
               <p className="text-sm sm:text-base leading-relaxed text-center opacity-80 mb-8">
-                This digital space embodies the creative process - from the initial spark of 
-                inspiration to the final polished track. The particles you see above are not 
-                just visual elements; they represent the building blocks of sound itself.
+                Currenlty our community is invite only. If you're interested in joining, please reach out to us at <a href="mailto:hello@studiox.vip" className="text-white hover:text-gray-400">hello@studiox.vip</a>.
               </p>
               
               <div className="text-center">
@@ -102,7 +100,7 @@ export default function StudioX() {
                   onClick={handleJoin}
                   className="border-white/20 text-black bg-white hover:bg-gray-100"
                 >
-                  Join
+                  Access
                   <SparklesIcon className="-me-1 opacity-60" size={16} aria-hidden="true" />
                 </Button>
               </div>
