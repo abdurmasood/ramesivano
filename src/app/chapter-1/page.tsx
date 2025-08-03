@@ -168,8 +168,8 @@ export default function LorePage() {
                             </div>
                             <div className="flex items-center gap-2">
                               {song.released && song.personalityType && (
-                                <div className={`transition-transform duration-200 ${
-                                  expandedSong === song.id ? 'rotate-180' : ''
+                                <div className={`transition-transform duration-300 ease-out ${
+                                  expandedSong === song.id ? 'rotate-180' : 'rotate-0'
                                 }`}>
                                   <ChevronDown className="w-3 h-3 text-[#23b9d6]" />
                                 </div>
@@ -188,11 +188,17 @@ export default function LorePage() {
                         </div>
                         
                         {/* Expandable personality type section */}
-                        {song.released && song.personalityType && expandedSong === song.id && (
-                          <div className="border-t border-[#23b9d6]/20 px-4 py-3 bg-[#23b9d6]/5">
-                            <p className="text-gray-500 text-xs font-light">
-                              Personality: <span className="text-gray-400">{song.personalityType}</span>
-                            </p>
+                        {song.released && song.personalityType && (
+                          <div 
+                            className={`overflow-hidden transition-all duration-300 ease-out ${
+                              expandedSong === song.id ? 'max-h-20 opacity-100' : 'max-h-0 opacity-0'
+                            }`}
+                          >
+                            <div className="border-t border-[#23b9d6]/20 px-4 py-3 bg-[#23b9d6]/5">
+                              <p className="text-gray-500 text-xs font-light">
+                                Personality: <span className="text-gray-400">{song.personalityType}</span>
+                              </p>
+                            </div>
                           </div>
                         )}
                       </div>
