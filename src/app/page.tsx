@@ -52,7 +52,7 @@ export default function Component() {
             <FadeOnly delay={0.6}>
               <section className="mb-6">
                 <h3 className={`text-2xl font-light text-white mb-4 text-center ${poppins.className}`}>Latest Release</h3>
-              <div className="aspect-video w-full">
+              <div className="aspect-video w-full relative">
                 <iframe
                   width="100%"
                   height="100%"
@@ -62,6 +62,16 @@ export default function Component() {
                   allowFullScreen
                   className="rounded-lg shadow-lg"
                 ></iframe>
+                <div className="absolute inset-0 bg-black/50 backdrop-blur-md rounded-lg flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                      <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
+                      </svg>
+                    </div>
+                    <p className={`text-white text-sm font-medium ${poppins.className}`}>Coming Soon</p>
+                  </div>
+                </div>
               </div>
               </section>
             </FadeOnly>
@@ -240,7 +250,7 @@ export default function Component() {
             <FadeOnly delay={1.0}>
               <section className="mt-12 sm:mt-20">
                 <h3 className={`text-2xl sm:text-3xl font-light text-white mb-6 sm:mb-8 text-center lg:text-left ${poppins.className}`}>Latest Release</h3>
-              <div className="aspect-video w-full max-w-3xl mx-auto">
+              <div className="aspect-video w-full max-w-3xl mx-auto relative">
                 <iframe
                   width="100%"
                   height="100%"
@@ -250,6 +260,16 @@ export default function Component() {
                   allowFullScreen
                   className="rounded-lg shadow-lg"
                 ></iframe>
+                <div className="absolute inset-0 bg-black/50 backdrop-blur-md rounded-lg flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                      <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
+                      </svg>
+                    </div>
+                    <p className={`text-white font-medium ${poppins.className}`}>Coming Soon</p>
+                  </div>
+                </div>
               </div>
               </section>
             </FadeOnly>
