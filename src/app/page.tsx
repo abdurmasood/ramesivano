@@ -126,7 +126,7 @@ export default function Component() {
             {/* Chapter Title & Action Buttons - Compact */}
             <FadeOnly delay={1.0}>
               <div className="text-center py-0">
-                <p className={`text-xl text-[#23b9d6] font-light mb-4 ${dancingScript.className}`}>
+                <p className={`text-2xl text-[#23b9d6] font-light mb-4 ${dancingScript.className}`}>
                   Chapter 1: Kon Hai Tu?
                 </p>
                 <div className="flex flex-col gap-2 px-8">
@@ -159,10 +159,10 @@ export default function Component() {
             <main className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
               <FadeOnly delay={0.6}>
                 <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
-                  <h2 className={`text-5xl sm:text-6xl font-light leading-tight text-white ${dancingScript.className}`}>
+                  <h2 className={`text-6xl sm:text-7xl font-light leading-tight text-white ${dancingScript.className}`}>
                     Ramé Sivano
                   </h2>
-                <p className={`text-2xl sm:text-3xl text-[#23b9d6] font-light ${dancingScript.className}`}>
+                <p className={`text-3xl sm:text-4xl text-[#23b9d6] font-light ${dancingScript.className}`}>
                   Chapter 1: Kon Hai Tu?
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
